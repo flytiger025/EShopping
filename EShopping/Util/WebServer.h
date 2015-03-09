@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol WebServerDelegate <NSObject>
+
+- (void)webServerDidReceiveDataSuccess:(id)responseObject;
+- (void)webServerDidReceiveDataFailure:(NSError *)error;
+
+@end
+
 @interface WebServer : NSObject
 
-+ (void)requestDataWithURL:(NSString *)url success:(void(^)(NSArray *data))success failure:(void(^)(NSError *error))failure;
+@property (nonatomic, weak) id<WebServerDelegate> delegate;
+
+- (void)requestDataWithURL:(NSURL *)url;
 
 @end

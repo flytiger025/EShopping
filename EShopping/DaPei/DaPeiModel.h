@@ -15,7 +15,9 @@
 @property (nonatomic, strong) NSNumber *param;
 @property (nonatomic, strong) NSNumber *imageHeight;
 @property (nonatomic, strong) NSNumber *imageWidth;
-@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, copy) NSString *imageURL;
 @property (nonatomic, copy) NSString *title;
+
++ (DaPeiModel *)model;
 
 @end

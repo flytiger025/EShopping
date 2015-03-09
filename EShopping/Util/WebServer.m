@@ -11,9 +11,22 @@
 
 @implementation WebServer
 
-+ (void)requestDataWithURL:(NSString *)url success:(void(^)(NSArray *data))success failure:(void(^)(NSError *error))failure {
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] init];
-    operation.
+- (void)requestDataWithURL:(NSURL *)url {
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([_delegate respondsToSelector:@selector(webServerDidReceiveDataSuccess:)]) {
+            [_delegate webServerDidReceiveDataSuccess:responseObject];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if ([_delegate respondsToSelector:@selector(webServerDidReceiveDataFailure:)]) {
+            [_delegate webServerDidReceiveDataFailure:error];
+        }
+    }];
+    
+    [operation start];
 }
 
 @end

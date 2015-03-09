@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface API : NSObject
+@interface URL : NSObject
 
 + (NSURL *)daPeiURL;
 

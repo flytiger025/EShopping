@@ -41,8 +41,8 @@
     woDeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"tabItem3"] selectedImage:[[UIImage imageNamed:@"tabItem_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     woDeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *woDeNC = [[UINavigationController alloc] initWithRootViewController:woDeVC];
-
-    self.viewControllers = @[daPeiNC, danPinNC, faXianNC, woDeNC];
+    
+    self.viewControllers = @[daPeiNC, danPinNC, faXianNC, woDeNC];    
 }
 
 

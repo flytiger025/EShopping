@@ -8,23 +8,24 @@
 
 #import "DaPeiModel.h"
 
-@interface DaPeiModel ()
-
-@end
-
 @implementation DaPeiModel
+
++ (DaPeiModel *)model {
+    return [[DaPeiModel alloc] init];
+}
 
 - (NSDictionary *)undefineKeyMap {
     return @{@"goods_num": @"goodsNumber",
              @"love_num": @"loveNumber",
              @"pic_height": @"imageHeight",
              @"pic_width": @"imageWidth",
-             @"pid_url": @"imageURL"
+             @"pic_url": @"imageURL"
              };
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    [self setValue:value forKey:[self undefineKeyMap][key]];
+    [self setValue:value forKey:[self undefineKeyMap][key]];    
 }
+
 
 @end

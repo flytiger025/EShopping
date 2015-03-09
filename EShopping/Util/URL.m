@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 renlongyu. All rights reserved.
 //
 
-#import "API.h"
+#import "URL.h"
 
-@implementation API
+@implementation URL
 
 + (NSURL *)daPeiURL {
     return [NSURL URLWithString:@"http://zhekou.yijia.com/lws/view/ichuanyi/title_dapei.php"];
 }
 
 + (NSURL *)daPeiCatagoryURLWithCid:(NSString *)cid page:(NSInteger)page {
-    NSString *urlString = [NSString stringWithFormat:@"http://zhekou.yijia.com/lws/view/ichuanyi/suit_list_data_get.php?cid=%@&page=%d", cid, page];
+    NSString *urlString = [NSString stringWithFormat:@"http://zhekou.yijia.com/lws/view/ichuanyi/suit_list_data_get.php?cid=%@&page=%ld", cid, page];
     return [NSURL URLWithString:urlString];
 }
 

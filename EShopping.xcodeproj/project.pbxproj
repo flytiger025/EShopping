@@ -7,10 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BE2FF291AAD51DA00EBA34B /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF281AAD51DA00EBA34B /* API.m */; };
-		7BE2FF611AAD8ABB00EBA34B /* DaPeiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF601AAD8ABB00EBA34B /* DaPeiModel.m */; };
-		7BE2FF651AAD8F7400EBA34B /* WoDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF641AAD8F7400EBA34B /* WoDeViewController.m */; };
+		7BE2FF291AAD51DA00EBA34B /* URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF281AAD51DA00EBA34B /* URL.m */; };
 		7BE2FF681AAD903000EBA34B /* WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF671AAD903000EBA34B /* WebServer.m */; };
+		7BE2FF831AADA2F400EBA34B /* DanPinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF771AADA2F400EBA34B /* DanPinViewController.m */; };
+		7BE2FF841AADA2F400EBA34B /* DaPeiCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF7A1AADA2F400EBA34B /* DaPeiCollectionViewCell.m */; };
+		7BE2FF851AADA2F400EBA34B /* DaPeiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FF7B1AADA2F400EBA34B /* DaPeiCollectionViewCell.xib */; };
+		7BE2FF861AADA2F400EBA34B /* DaPeiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF7D1AADA2F400EBA34B /* DaPeiModel.m */; };
+		7BE2FF871AADA2F400EBA34B /* DaPeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF7F1AADA2F400EBA34B /* DaPeiViewController.m */; };
+		7BE2FF881AADA2F400EBA34B /* FaXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF821AADA2F400EBA34B /* FaXianViewController.m */; };
+		7BE2FF941AADA30900EBA34B /* WaterfallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF8B1AADA30900EBA34B /* WaterfallCollectionViewCell.m */; };
+		7BE2FF951AADA30900EBA34B /* WaterfallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FF8C1AADA30900EBA34B /* WaterfallCollectionViewCell.xib */; };
+		7BE2FF961AADA30900EBA34B /* WaterfallCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF8E1AADA30900EBA34B /* WaterfallCollectionViewLayout.m */; };
+		7BE2FF971AADA30900EBA34B /* WaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF901AADA30900EBA34B /* WaterfallViewController.m */; };
+		7BE2FF981AADA30900EBA34B /* WoDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF931AADA30900EBA34B /* WoDeViewController.m */; };
+		7BE2FF9A1AADB98A00EBA34B /* goodsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FF991AADB98A00EBA34B /* goodsIcon.png */; };
+		7BE2FFA01AADBC6900EBA34B /* DaPeiCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FF9F1AADBC6900EBA34B /* DaPeiCategory.m */; };
+		7BE2FFA31AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFA21AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m */; };
+		7BE2FFA61AADD07D00EBA34B /* DaPeiCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFA51AADD07D00EBA34B /* DaPeiCollectionViewController.m */; };
+		7BE2FFAC1AADF58200EBA34B /* DaPeiInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFAB1AADF58200EBA34B /* DaPeiInfoModel.m */; };
+		7BE2FFB71AADF87F00EBA34B /* DaPeiInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFB61AADF87F00EBA34B /* DaPeiInfoViewController.m */; };
+		7BE2FFBB1AADF8E500EBA34B /* DaPeiInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */; };
+		7BE2FFBC1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */; };
+		7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */; };
+		7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */; };
 		7BE98CBB1AAB023D00D59E1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98CBA1AAB023D00D59E1C /* main.m */; };
 		7BE98CBE1AAB023D00D59E1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98CBD1AAB023D00D59E1C /* AppDelegate.m */; };
 		7BE98CC01AAB023D00D59E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CBF1AAB023D00D59E1C /* Images.xcassets */; };
@@ -35,7 +54,6 @@
 		7BE98D241AAB042D00D59E1C /* click_login_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CEC1AAB042D00D59E1C /* click_login_btn@2x.png */; };
 		7BE98D251AAB042D00D59E1C /* commentSend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CED1AAB042D00D59E1C /* commentSend@2x.png */; };
 		7BE98D261AAB042D00D59E1C /* goodsDislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CEE1AAB042D00D59E1C /* goodsDislike.png */; };
-		7BE98D271AAB042D00D59E1C /* goodsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CEF1AAB042D00D59E1C /* goodsIcon@2x.png */; };
 		7BE98D281AAB042D00D59E1C /* goodsLike.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CF01AAB042D00D59E1C /* goodsLike.png */; };
 		7BE98D291AAB042D00D59E1C /* halfPriceDetail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CF11AAB042D00D59E1C /* halfPriceDetail@2x.png */; };
 		7BE98D2A1AAB042D00D59E1C /* Header_bgd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CF21AAB042D00D59E1C /* Header_bgd@2x.png */; };
@@ -72,13 +90,6 @@
 		7BE98D491AAB042D00D59E1C /* threeBars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98D111AAB042D00D59E1C /* threeBars@2x.png */; };
 		7BE98D4A1AAB042D00D59E1C /* toolBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98D121AAB042D00D59E1C /* toolBar@2x.png */; };
 		7BE98D4B1AAB042D00D59E1C /* webView_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98D131AAB042D00D59E1C /* webView_4@2x.png */; };
-		7BE98D511AAB15E800D59E1C /* DaPeiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D501AAB15E800D59E1C /* DaPeiViewController.m */; };
-		7BE98D5D1AAB163300D59E1C /* DanPinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D5A1AAB163300D59E1C /* DanPinViewController.m */; };
-		7BE98D5E1AAB163300D59E1C /* FaXianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D5C1AAB163300D59E1C /* FaXianViewController.m */; };
-		7BE98D641AAB1BF800D59E1C /* WaterfallCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D631AAB1BF800D59E1C /* WaterfallCollectionViewLayout.m */; };
-		7BE98D681AAB1D4500D59E1C /* WaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D671AAB1D4500D59E1C /* WaterfallViewController.m */; };
-		7BE98D6C1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D6A1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.m */; };
-		7BE98D6D1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98D6B1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.xib */; };
 		7BE98D7E1AAB331D00D59E1C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D791AAB331D00D59E1C /* RootViewController.m */; };
 		7BE98D7F1AAB331D00D59E1C /* SBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D7B1AAB331D00D59E1C /* SBTabBar.m */; };
 		7BE98D801AAB331D00D59E1C /* SBNavTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98D7D1AAB331D00D59E1C /* SBNavTabBarController.m */; };
@@ -98,14 +109,47 @@
 /* Begin PBXFileReference section */
 		01C0245905ABF48A1501583C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0BACBDBAE89438040A66F494 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		7BE2FF271AAD51DA00EBA34B /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = API.h; path = Util/API.h; sourceTree = "<group>"; };
-		7BE2FF281AAD51DA00EBA34B /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = API.m; path = Util/API.m; sourceTree = "<group>"; };
-		7BE2FF5F1AAD8ABB00EBA34B /* DaPeiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaPeiModel.h; path = Models/DaPeiModel.h; sourceTree = "<group>"; };
-		7BE2FF601AAD8ABB00EBA34B /* DaPeiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaPeiModel.m; path = Models/DaPeiModel.m; sourceTree = "<group>"; };
-		7BE2FF631AAD8F7400EBA34B /* WoDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WoDeViewController.h; path = Controllers/WoDeViewController.h; sourceTree = "<group>"; };
-		7BE2FF641AAD8F7400EBA34B /* WoDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WoDeViewController.m; path = Controllers/WoDeViewController.m; sourceTree = "<group>"; };
+		7BE2FF271AAD51DA00EBA34B /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URL.h; path = Util/URL.h; sourceTree = "<group>"; };
+		7BE2FF281AAD51DA00EBA34B /* URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URL.m; path = Util/URL.m; sourceTree = "<group>"; };
 		7BE2FF661AAD903000EBA34B /* WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServer.h; path = Util/WebServer.h; sourceTree = "<group>"; };
 		7BE2FF671AAD903000EBA34B /* WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServer.m; path = Util/WebServer.m; sourceTree = "<group>"; };
+		7BE2FF761AADA2F400EBA34B /* DanPinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanPinViewController.h; sourceTree = "<group>"; };
+		7BE2FF771AADA2F400EBA34B /* DanPinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanPinViewController.m; sourceTree = "<group>"; };
+		7BE2FF791AADA2F400EBA34B /* DaPeiCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiCollectionViewCell.h; sourceTree = "<group>"; };
+		7BE2FF7A1AADA2F400EBA34B /* DaPeiCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiCollectionViewCell.m; sourceTree = "<group>"; };
+		7BE2FF7B1AADA2F400EBA34B /* DaPeiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiCollectionViewCell.xib; sourceTree = "<group>"; };
+		7BE2FF7C1AADA2F400EBA34B /* DaPeiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiModel.h; sourceTree = "<group>"; };
+		7BE2FF7D1AADA2F400EBA34B /* DaPeiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiModel.m; sourceTree = "<group>"; };
+		7BE2FF7E1AADA2F400EBA34B /* DaPeiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiViewController.h; sourceTree = "<group>"; };
+		7BE2FF7F1AADA2F400EBA34B /* DaPeiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiViewController.m; sourceTree = "<group>"; };
+		7BE2FF811AADA2F400EBA34B /* FaXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaXianViewController.h; sourceTree = "<group>"; };
+		7BE2FF821AADA2F400EBA34B /* FaXianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaXianViewController.m; sourceTree = "<group>"; };
+		7BE2FF8A1AADA30900EBA34B /* WaterfallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallCollectionViewCell.h; sourceTree = "<group>"; };
+		7BE2FF8B1AADA30900EBA34B /* WaterfallCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallCollectionViewCell.m; sourceTree = "<group>"; };
+		7BE2FF8C1AADA30900EBA34B /* WaterfallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterfallCollectionViewCell.xib; sourceTree = "<group>"; };
+		7BE2FF8D1AADA30900EBA34B /* WaterfallCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallCollectionViewLayout.h; sourceTree = "<group>"; };
+		7BE2FF8E1AADA30900EBA34B /* WaterfallCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallCollectionViewLayout.m; sourceTree = "<group>"; };
+		7BE2FF8F1AADA30900EBA34B /* WaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallViewController.h; sourceTree = "<group>"; };
+		7BE2FF901AADA30900EBA34B /* WaterfallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallViewController.m; sourceTree = "<group>"; };
+		7BE2FF921AADA30900EBA34B /* WoDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoDeViewController.h; sourceTree = "<group>"; };
+		7BE2FF931AADA30900EBA34B /* WoDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoDeViewController.m; sourceTree = "<group>"; };
+		7BE2FF991AADB98A00EBA34B /* goodsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodsIcon.png; sourceTree = "<group>"; };
+		7BE2FF9E1AADBC6900EBA34B /* DaPeiCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiCategory.h; sourceTree = "<group>"; };
+		7BE2FF9F1AADBC6900EBA34B /* DaPeiCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiCategory.m; sourceTree = "<group>"; };
+		7BE2FFA11AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaPeiCollectionViewCell+Configure.h"; sourceTree = "<group>"; };
+		7BE2FFA21AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaPeiCollectionViewCell+Configure.m"; sourceTree = "<group>"; };
+		7BE2FFA41AADD07D00EBA34B /* DaPeiCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiCollectionViewController.h; sourceTree = "<group>"; };
+		7BE2FFA51AADD07D00EBA34B /* DaPeiCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiCollectionViewController.m; sourceTree = "<group>"; };
+		7BE2FFAA1AADF58200EBA34B /* DaPeiInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoModel.h; sourceTree = "<group>"; };
+		7BE2FFAB1AADF58200EBA34B /* DaPeiInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoModel.m; sourceTree = "<group>"; };
+		7BE2FFB51AADF87F00EBA34B /* DaPeiInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoViewController.h; sourceTree = "<group>"; };
+		7BE2FFB61AADF87F00EBA34B /* DaPeiInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoViewController.m; sourceTree = "<group>"; };
+		7BE2FFB81AADF8E500EBA34B /* DaPeiInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableViewCell.h; sourceTree = "<group>"; };
+		7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableViewCell.m; sourceTree = "<group>"; };
+		7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableFooterView.h; sourceTree = "<group>"; };
+		7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableFooterView.m; sourceTree = "<group>"; };
+		7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableFooterView.xib; sourceTree = "<group>"; };
 		7BE98CB51AAB023D00D59E1C /* EShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE98CB91AAB023D00D59E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BE98CBA1AAB023D00D59E1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,7 +179,6 @@
 		7BE98CEC1AAB042D00D59E1C /* click_login_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "click_login_btn@2x.png"; sourceTree = "<group>"; };
 		7BE98CED1AAB042D00D59E1C /* commentSend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commentSend@2x.png"; sourceTree = "<group>"; };
 		7BE98CEE1AAB042D00D59E1C /* goodsDislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodsDislike.png; sourceTree = "<group>"; };
-		7BE98CEF1AAB042D00D59E1C /* goodsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goodsIcon@2x.png"; sourceTree = "<group>"; };
 		7BE98CF01AAB042D00D59E1C /* goodsLike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodsLike.png; sourceTree = "<group>"; };
 		7BE98CF11AAB042D00D59E1C /* halfPriceDetail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "halfPriceDetail@2x.png"; sourceTree = "<group>"; };
 		7BE98CF21AAB042D00D59E1C /* Header_bgd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Header_bgd@2x.png"; sourceTree = "<group>"; };
@@ -172,19 +215,6 @@
 		7BE98D111AAB042D00D59E1C /* threeBars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "threeBars@2x.png"; sourceTree = "<group>"; };
 		7BE98D121AAB042D00D59E1C /* toolBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolBar@2x.png"; sourceTree = "<group>"; };
 		7BE98D131AAB042D00D59E1C /* webView_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webView_4@2x.png"; sourceTree = "<group>"; };
-		7BE98D4F1AAB15E800D59E1C /* DaPeiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaPeiViewController.h; path = Controllers/DaPeiViewController.h; sourceTree = "<group>"; };
-		7BE98D501AAB15E800D59E1C /* DaPeiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaPeiViewController.m; path = Controllers/DaPeiViewController.m; sourceTree = "<group>"; };
-		7BE98D591AAB163300D59E1C /* DanPinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DanPinViewController.h; path = Controllers/DanPinViewController.h; sourceTree = "<group>"; };
-		7BE98D5A1AAB163300D59E1C /* DanPinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DanPinViewController.m; path = Controllers/DanPinViewController.m; sourceTree = "<group>"; };
-		7BE98D5B1AAB163300D59E1C /* FaXianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaXianViewController.h; path = Controllers/FaXianViewController.h; sourceTree = "<group>"; };
-		7BE98D5C1AAB163300D59E1C /* FaXianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaXianViewController.m; path = Controllers/FaXianViewController.m; sourceTree = "<group>"; };
-		7BE98D621AAB1BF800D59E1C /* WaterfallCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallCollectionViewLayout.h; sourceTree = "<group>"; };
-		7BE98D631AAB1BF800D59E1C /* WaterfallCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallCollectionViewLayout.m; sourceTree = "<group>"; };
-		7BE98D661AAB1D4500D59E1C /* WaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallViewController.h; sourceTree = "<group>"; };
-		7BE98D671AAB1D4500D59E1C /* WaterfallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallViewController.m; sourceTree = "<group>"; };
-		7BE98D691AAB1D6D00D59E1C /* WaterfallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallCollectionViewCell.h; sourceTree = "<group>"; };
-		7BE98D6A1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallCollectionViewCell.m; sourceTree = "<group>"; };
-		7BE98D6B1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterfallCollectionViewCell.xib; sourceTree = "<group>"; };
 		7BE98D781AAB331D00D59E1C /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = TabBar/RootViewController.h; sourceTree = "<group>"; };
 		7BE98D791AAB331D00D59E1C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = TabBar/RootViewController.m; sourceTree = "<group>"; };
 		7BE98D7A1AAB331D00D59E1C /* SBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTabBar.h; path = TabBar/SBTabBar.h; sourceTree = "<group>"; };
@@ -214,13 +244,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7BE2FF621AAD8AC000EBA34B /* Models */ = {
+		7BE2FF751AADA2F400EBA34B /* DanPin */ = {
 			isa = PBXGroup;
 			children = (
-				7BE2FF5F1AAD8ABB00EBA34B /* DaPeiModel.h */,
-				7BE2FF601AAD8ABB00EBA34B /* DaPeiModel.m */,
+				7BE2FF761AADA2F400EBA34B /* DanPinViewController.h */,
+				7BE2FF771AADA2F400EBA34B /* DanPinViewController.m */,
 			);
-			name = Models;
+			path = DanPin;
+			sourceTree = "<group>";
+		};
+		7BE2FF781AADA2F400EBA34B /* DaPei */ = {
+			isa = PBXGroup;
+			children = (
+				7BE2FF7C1AADA2F400EBA34B /* DaPeiModel.h */,
+				7BE2FF7D1AADA2F400EBA34B /* DaPeiModel.m */,
+				7BE2FF9E1AADBC6900EBA34B /* DaPeiCategory.h */,
+				7BE2FF9F1AADBC6900EBA34B /* DaPeiCategory.m */,
+				7BE2FFAA1AADF58200EBA34B /* DaPeiInfoModel.h */,
+				7BE2FFAB1AADF58200EBA34B /* DaPeiInfoModel.m */,
+				7BE2FFA11AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.h */,
+				7BE2FFA21AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m */,
+				7BE2FF791AADA2F400EBA34B /* DaPeiCollectionViewCell.h */,
+				7BE2FF7A1AADA2F400EBA34B /* DaPeiCollectionViewCell.m */,
+				7BE2FF7B1AADA2F400EBA34B /* DaPeiCollectionViewCell.xib */,
+				7BE2FF7E1AADA2F400EBA34B /* DaPeiViewController.h */,
+				7BE2FF7F1AADA2F400EBA34B /* DaPeiViewController.m */,
+				7BE2FFA41AADD07D00EBA34B /* DaPeiCollectionViewController.h */,
+				7BE2FFA51AADD07D00EBA34B /* DaPeiCollectionViewController.m */,
+				7BE2FFB51AADF87F00EBA34B /* DaPeiInfoViewController.h */,
+				7BE2FFB61AADF87F00EBA34B /* DaPeiInfoViewController.m */,
+				7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterView.h */,
+				7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */,
+				7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */,
+				7BE2FFB81AADF8E500EBA34B /* DaPeiInfoTableViewCell.h */,
+				7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */,
+				7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */,
+			);
+			path = DaPei;
+			sourceTree = "<group>";
+		};
+		7BE2FF801AADA2F400EBA34B /* FaXian */ = {
+			isa = PBXGroup;
+			children = (
+				7BE2FF811AADA2F400EBA34B /* FaXianViewController.h */,
+				7BE2FF821AADA2F400EBA34B /* FaXianViewController.m */,
+			);
+			path = FaXian;
+			sourceTree = "<group>";
+		};
+		7BE2FF891AADA30900EBA34B /* Waterfall */ = {
+			isa = PBXGroup;
+			children = (
+				7BE2FF8A1AADA30900EBA34B /* WaterfallCollectionViewCell.h */,
+				7BE2FF8B1AADA30900EBA34B /* WaterfallCollectionViewCell.m */,
+				7BE2FF8C1AADA30900EBA34B /* WaterfallCollectionViewCell.xib */,
+				7BE2FF8D1AADA30900EBA34B /* WaterfallCollectionViewLayout.h */,
+				7BE2FF8E1AADA30900EBA34B /* WaterfallCollectionViewLayout.m */,
+				7BE2FF8F1AADA30900EBA34B /* WaterfallViewController.h */,
+				7BE2FF901AADA30900EBA34B /* WaterfallViewController.m */,
+			);
+			path = Waterfall;
+			sourceTree = "<group>";
+		};
+		7BE2FF911AADA30900EBA34B /* WoDe */ = {
+			isa = PBXGroup;
+			children = (
+				7BE2FF921AADA30900EBA34B /* WoDeViewController.h */,
+				7BE2FF931AADA30900EBA34B /* WoDeViewController.m */,
+			);
+			path = WoDe;
 			sourceTree = "<group>";
 		};
 		7BE98CAC1AAB023D00D59E1C = {
@@ -249,10 +341,12 @@
 				7BE98CBC1AAB023D00D59E1C /* AppDelegate.h */,
 				7BE98CBD1AAB023D00D59E1C /* AppDelegate.m */,
 				7BE98D741AAB325900D59E1C /* TabBar */,
-				7BE98D651AAB1C0200D59E1C /* Waterfall */,
-				7BE2FF621AAD8AC000EBA34B /* Models */,
-				7BE98D521AAB15EE00D59E1C /* Controllers */,
 				7BE98D821AAB337500D59E1C /* Utils */,
+				7BE2FF891AADA30900EBA34B /* Waterfall */,
+				7BE2FF781AADA2F400EBA34B /* DaPei */,
+				7BE2FF751AADA2F400EBA34B /* DanPin */,
+				7BE2FF801AADA2F400EBA34B /* FaXian */,
+				7BE2FF911AADA30900EBA34B /* WoDe */,
 				7BE98CDB1AAB042D00D59E1C /* Resource */,
 				7BE98CBF1AAB023D00D59E1C /* Images.xcassets */,
 				7BE98CC11AAB023D00D59E1C /* LaunchScreen.xib */,
@@ -290,6 +384,7 @@
 		7BE98CDB1AAB042D00D59E1C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7BE2FF991AADB98A00EBA34B /* goodsIcon.png */,
 				7BE98CDC1AAB042D00D59E1C /* 114.png */,
 				7BE98CDD1AAB042D00D59E1C /* AppIcon29x29.png */,
 				7BE98CDE1AAB042D00D59E1C /* AppIcon29x29@2x.png */,
@@ -309,7 +404,6 @@
 				7BE98CEC1AAB042D00D59E1C /* click_login_btn@2x.png */,
 				7BE98CED1AAB042D00D59E1C /* commentSend@2x.png */,
 				7BE98CEE1AAB042D00D59E1C /* goodsDislike.png */,
-				7BE98CEF1AAB042D00D59E1C /* goodsIcon@2x.png */,
 				7BE98CF01AAB042D00D59E1C /* goodsLike.png */,
 				7BE98CF11AAB042D00D59E1C /* halfPriceDetail@2x.png */,
 				7BE98CF21AAB042D00D59E1C /* Header_bgd@2x.png */,
@@ -350,35 +444,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		7BE98D521AAB15EE00D59E1C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7BE98D4F1AAB15E800D59E1C /* DaPeiViewController.h */,
-				7BE98D501AAB15E800D59E1C /* DaPeiViewController.m */,
-				7BE98D591AAB163300D59E1C /* DanPinViewController.h */,
-				7BE98D5A1AAB163300D59E1C /* DanPinViewController.m */,
-				7BE98D5B1AAB163300D59E1C /* FaXianViewController.h */,
-				7BE98D5C1AAB163300D59E1C /* FaXianViewController.m */,
-				7BE2FF631AAD8F7400EBA34B /* WoDeViewController.h */,
-				7BE2FF641AAD8F7400EBA34B /* WoDeViewController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		7BE98D651AAB1C0200D59E1C /* Waterfall */ = {
-			isa = PBXGroup;
-			children = (
-				7BE98D691AAB1D6D00D59E1C /* WaterfallCollectionViewCell.h */,
-				7BE98D6A1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.m */,
-				7BE98D6B1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.xib */,
-				7BE98D621AAB1BF800D59E1C /* WaterfallCollectionViewLayout.h */,
-				7BE98D631AAB1BF800D59E1C /* WaterfallCollectionViewLayout.m */,
-				7BE98D661AAB1D4500D59E1C /* WaterfallViewController.h */,
-				7BE98D671AAB1D4500D59E1C /* WaterfallViewController.m */,
-			);
-			name = Waterfall;
-			sourceTree = "<group>";
-		};
 		7BE98D741AAB325900D59E1C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,8 +461,8 @@
 			isa = PBXGroup;
 			children = (
 				7BE98D861AAB3B4500D59E1C /* Macro.h */,
-				7BE2FF271AAD51DA00EBA34B /* API.h */,
-				7BE2FF281AAD51DA00EBA34B /* API.m */,
+				7BE2FF271AAD51DA00EBA34B /* URL.h */,
+				7BE2FF281AAD51DA00EBA34B /* URL.m */,
 				7BE2FF661AAD903000EBA34B /* WebServer.h */,
 				7BE2FF671AAD903000EBA34B /* WebServer.m */,
 			);
@@ -526,11 +591,11 @@
 				7BE98D401AAB042D00D59E1C /* tabItem0@2x.png in Resources */,
 				7BE98D2C1AAB042D00D59E1C /* LaunchImage-700-568h@2x.png in Resources */,
 				7BE98D3D1AAB042D00D59E1C /* smabg.png in Resources */,
+				7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib in Resources */,
 				7BE98D3C1AAB042D00D59E1C /* shippingFree.png in Resources */,
 				7BE98D301AAB042D00D59E1C /* left.png in Resources */,
 				7BE98D2B1AAB042D00D59E1C /* LaunchImage-568h@2x.png in Resources */,
 				7BE98D471AAB042D00D59E1C /* tabItem_3@2x.png in Resources */,
-				7BE98D271AAB042D00D59E1C /* goodsIcon@2x.png in Resources */,
 				7BE98D251AAB042D00D59E1C /* commentSend@2x.png in Resources */,
 				7BE98D3A1AAB042D00D59E1C /* right@2x.png in Resources */,
 				7BE98D161AAB042D00D59E1C /* AppIcon29x29@2x.png in Resources */,
@@ -544,14 +609,15 @@
 				7BE98D261AAB042D00D59E1C /* goodsDislike.png in Resources */,
 				7BE98D431AAB042D00D59E1C /* tabItem3@2x.png in Resources */,
 				7BE98D321AAB042D00D59E1C /* loading@2x.png in Resources */,
+				7BE2FF951AADA30900EBA34B /* WaterfallCollectionViewCell.xib in Resources */,
 				7BE98D2F1AAB042D00D59E1C /* LaunchImage@2x.png in Resources */,
 				7BE98D181AAB042D00D59E1C /* AppIcon57x57.png in Resources */,
 				7BE98D371AAB042D00D59E1C /* myProfile_7@2x.png in Resources */,
 				7BE98D341AAB042D00D59E1C /* loadingIcon@2x.png in Resources */,
+				7BE2FF9A1AADB98A00EBA34B /* goodsIcon.png in Resources */,
 				7BE98D281AAB042D00D59E1C /* goodsLike.png in Resources */,
 				7BE98D241AAB042D00D59E1C /* click_login_btn@2x.png in Resources */,
 				7BE98D381AAB042D00D59E1C /* newBack@2x.png in Resources */,
-				7BE98D6D1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.xib in Resources */,
 				7BE98D361AAB042D00D59E1C /* myProfile_6@2x.png in Resources */,
 				7BE98D221AAB042D00D59E1C /* cell_bgd@2x.png in Resources */,
 				7BE98CC31AAB023D00D59E1C /* LaunchScreen.xib in Resources */,
@@ -562,6 +628,8 @@
 				7BE98D491AAB042D00D59E1C /* threeBars@2x.png in Resources */,
 				7BE98CC01AAB023D00D59E1C /* Images.xcassets in Resources */,
 				7BE98D151AAB042D00D59E1C /* AppIcon29x29.png in Resources */,
+				7BE2FFBC1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib in Resources */,
+				7BE2FF851AADA2F400EBA34B /* DaPeiCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,21 +680,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BE98D681AAB1D4500D59E1C /* WaterfallViewController.m in Sources */,
 				7BE98CBE1AAB023D00D59E1C /* AppDelegate.m in Sources */,
-				7BE98D641AAB1BF800D59E1C /* WaterfallCollectionViewLayout.m in Sources */,
-				7BE98D5D1AAB163300D59E1C /* DanPinViewController.m in Sources */,
+				7BE2FFA31AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m in Sources */,
+				7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterView.m in Sources */,
 				7BE98D7F1AAB331D00D59E1C /* SBTabBar.m in Sources */,
-				7BE2FF651AAD8F7400EBA34B /* WoDeViewController.m in Sources */,
+				7BE2FF831AADA2F400EBA34B /* DanPinViewController.m in Sources */,
+				7BE2FF881AADA2F400EBA34B /* FaXianViewController.m in Sources */,
+				7BE2FF861AADA2F400EBA34B /* DaPeiModel.m in Sources */,
 				7BE98D7E1AAB331D00D59E1C /* RootViewController.m in Sources */,
+				7BE2FFBB1AADF8E500EBA34B /* DaPeiInfoTableViewCell.m in Sources */,
+				7BE2FF841AADA2F400EBA34B /* DaPeiCollectionViewCell.m in Sources */,
 				7BE98CBB1AAB023D00D59E1C /* main.m in Sources */,
 				7BE2FF681AAD903000EBA34B /* WebServer.m in Sources */,
-				7BE2FF291AAD51DA00EBA34B /* API.m in Sources */,
-				7BE98D5E1AAB163300D59E1C /* FaXianViewController.m in Sources */,
+				7BE2FF941AADA30900EBA34B /* WaterfallCollectionViewCell.m in Sources */,
+				7BE2FFA61AADD07D00EBA34B /* DaPeiCollectionViewController.m in Sources */,
+				7BE2FF291AAD51DA00EBA34B /* URL.m in Sources */,
+				7BE2FF961AADA30900EBA34B /* WaterfallCollectionViewLayout.m in Sources */,
+				7BE2FFB71AADF87F00EBA34B /* DaPeiInfoViewController.m in Sources */,
+				7BE2FF971AADA30900EBA34B /* WaterfallViewController.m in Sources */,
+				7BE2FFA01AADBC6900EBA34B /* DaPeiCategory.m in Sources */,
+				7BE2FF981AADA30900EBA34B /* WoDeViewController.m in Sources */,
+				7BE2FF871AADA2F400EBA34B /* DaPeiViewController.m in Sources */,
 				7BE98D801AAB331D00D59E1C /* SBNavTabBarController.m in Sources */,
-				7BE98D511AAB15E800D59E1C /* DaPeiViewController.m in Sources */,
-				7BE98D6C1AAB1D6D00D59E1C /* WaterfallCollectionViewCell.m in Sources */,
-				7BE2FF611AAD8ABB00EBA34B /* DaPeiModel.m in Sources */,
+				7BE2FFAC1AADF58200EBA34B /* DaPeiInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

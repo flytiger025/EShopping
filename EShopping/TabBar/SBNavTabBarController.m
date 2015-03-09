@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+        
     _currentIndex = 0;
     self.titles = [NSMutableArray arrayWithCapacity:_viewControllers.count];
     for (UIViewController *viewController in _viewControllers) {
@@ -38,7 +38,7 @@
     [_navTabBar updateData];
     
     CGFloat originY = _navTabBar.frame.origin.y + _navTabBar.frame.size.height;
-    self.mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, originY, SCREEN_WIDTH, SCREEN_HEIGHT - originY - 64 - 40 - 10)];
+    self.mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, originY, SCREEN_WIDTH, SCREEN_HEIGHT - originY - 50)];
     _mainView.delegate = self;
     _mainView.pagingEnabled = YES;
     _mainView.directionalLockEnabled = YES;
@@ -52,8 +52,8 @@
     [_viewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIViewController *viewController = (UIViewController *)_viewControllers[idx];
         viewController.view.frame = CGRectMake(idx * SCREEN_WIDTH, 0, SCREEN_WIDTH, _mainView.frame.size.height);
-        [_mainView addSubview:viewController.view];
         [self addChildViewController:viewController];
+        [_mainView addSubview:viewController.view];
     }];
 }
 

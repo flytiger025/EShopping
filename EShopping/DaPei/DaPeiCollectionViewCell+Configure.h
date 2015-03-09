@@ -1,0 +1,16 @@
+//
+//  DaPeiCollectionViewCell+Configure.h
+//  EShopping
+//
+//  Created by 任龙宇 on 15/3/9.
+//  Copyright (c) 2015年 renlongyu. All rights reserved.
+//
+
+#import "DaPeiCollectionViewCell.h"
+
+@class DaPeiModel;
+@interface DaPeiCollectionViewCell (Configure)
+
+- (void)configureCellWithDaPeiModel:(DaPeiModel *)daPeiModel;
+
+@end

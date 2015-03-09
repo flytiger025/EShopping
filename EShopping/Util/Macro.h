@@ -10,16 +10,21 @@
 #define EShopping_Macro_h
 
 
-#define DEBUG_LOG           NSLog(@"%s", __FUNCTION__)
+#define DEBUG_LOG   NSLog(@"%s", __FUNCTION__)
 
 
-#define SCREEN_WIDTH        [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+
 
 #define NAV_TAB_BAR_HEIGHT  44
 
 
-#define RANDOM_COLOR [UIColor colorWithRed:arc4random() % 256 / 255. green:arc4random() % 256 / 255. blue:arc4random() % 256 / 255. alpha:1.]
+#define COLLECTION_CELL_WIDTH   (SCREEN_WIDTH - 30) / 2
+#define COLLECTION_COLUMN_COUNT 2
+
+
+#define RANDOM_COLOR    [UIColor colorWithRed:arc4random() % 256 / 255. green:arc4random() % 256 / 255. blue:arc4random() % 256 / 255. alpha:1.]
 
 
 #endif
