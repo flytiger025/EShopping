@@ -7,8 +7,17 @@
 //
 
 #import "FaXianViewController.h"
+#import "SBTitleView.h"
+#import "JKJViewController.h"
+#import "BanJiaViewController.h"
+#import "Macro.h"
 
-@interface FaXianViewController ()
+@interface FaXianViewController () <SBTitleViewDelegate, UIScrollViewDelegate>
+{
+    UIScrollView *_mainView;
+}
+
+@property (nonatomic, strong) SBTitleView *titleView;
 
 @end
 
@@ -17,6 +26,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.titleView = [[SBTitleView alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
+    _titleView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
+    _titleView.delegate = self;
+    _titleView.leftButtonTitle = @"九块九";
+    _titleView.rightButtonTitle = @"半价";
+    self.navigationItem.titleView = self.titleView;
+    
+    JKJViewController *jkjVC = [[JKJViewController alloc] init];
+    [self addChildViewController:jkjVC];
+    [_mainView addSubview:jkjVC.view];
+    
+    BanJiaViewController *banJiaVC = [[BanJiaViewController alloc] init];
+    banJiaVC.view.frame = CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self addChildViewController:banJiaVC];
+    [_mainView addSubview:banJiaVC.view];
+}
+
+- (void)loadView {
+    [super loadView];
+    if (!_mainView) {
+        _mainView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+        _mainView.contentSize = CGSizeMake(self.view.frame.size.width * 2, 0);
+        _mainView.showsHorizontalScrollIndicator = 0;
+        _mainView.pagingEnabled = YES;
+        _mainView.delegate = self;
+        self.view = _mainView;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +61,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - SBTitleViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)titleViewDidClickedLeftButton:(SBTitleView *)titleView {
+    [_mainView setContentOffset:CGPointZero animated:YES];
 }
-*/
+
+- (void)titleViewDidClickedRightButton:(SBTitleView *)titleView {
+    [_mainView setContentOffset:CGPointMake(self.view.frame.size.width, 0) animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    _titleView.state = scrollView.contentOffset.x == 0 ? SBTitleViewStateLeft : SBTitleViewStateRight;
+}
+
+
 
 @end

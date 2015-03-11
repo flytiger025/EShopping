@@ -38,11 +38,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥68" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-Bz-MuU">
-                                <rect key="frame" x="251" y="13" width="49" height="20.5"/>
+                                <rect key="frame" x="246" y="13" width="54" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="iqb-PP-ZUh"/>
+                                    <constraint firstAttribute="width" constant="54" id="iqb-PP-ZUh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.41176470590000003" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -50,7 +50,7 @@
                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Y8U-8a-Gen" firstAttribute="leading" secondItem="XE1-oW-ZAY" secondAttribute="trailing" constant="11" id="3Y1-d2-G7b"/>
-                            <constraint firstItem="VCK-Bz-MuU" firstAttribute="leading" secondItem="Y8U-8a-Gen" secondAttribute="trailing" constant="8" id="5B5-BC-egI"/>
+                            <constraint firstItem="VCK-Bz-MuU" firstAttribute="leading" secondItem="Y8U-8a-Gen" secondAttribute="trailing" constant="3" id="5B5-BC-egI"/>
                             <constraint firstItem="XE1-oW-ZAY" firstAttribute="top" secondItem="hhi-eM-0fA" secondAttribute="top" constant="8" id="Bfi-Rt-uQu"/>
                             <constraint firstAttribute="trailing" secondItem="din-RT-lPl" secondAttribute="trailing" id="Cr3-PJ-TaR"/>
                             <constraint firstItem="XE1-oW-ZAY" firstAttribute="leading" secondItem="hhi-eM-0fA" secondAttribute="leading" constant="8" id="FRz-3j-4GT"/>

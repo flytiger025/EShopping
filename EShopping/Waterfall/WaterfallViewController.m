@@ -11,9 +11,9 @@
 #import "DaPeiCollectionViewController.h"
 #import "Macro.h"
 
-static NSString *daPeiCell = @"DaPeiCollectionViewCell";
-static NSString *danPinCell = @"DanPinCollectionViewCell";
-static NSString *faXianCell = @"FaXianCollectionViewCell";
+static NSString * const daPeiCell = @"DaPeiCollectionViewCell";
+static NSString * const danPinCell = @"DanPinCollectionViewCell";
+static NSString * const faXianCell = @"FaXianCollectionViewCell";
 
 @interface WaterfallViewController () <UIScrollViewDelegate>
 

@@ -28,8 +28,25 @@
 		7BE2FFB71AADF87F00EBA34B /* DaPeiInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFB61AADF87F00EBA34B /* DaPeiInfoViewController.m */; };
 		7BE2FFBB1AADF8E500EBA34B /* DaPeiInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */; };
 		7BE2FFBC1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */; };
-		7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */; };
-		7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */; };
+		7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.m */; };
+		7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.xib */; };
+		7BE2FFCD1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFCB1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.m */; };
+		7BE2FFCE1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFCC1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.xib */; };
+		7BE2FFD11AAE954600EBA34B /* DanPinCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFD01AAE954600EBA34B /* DanPinCollectionViewController.m */; };
+		7BE2FFD41AAE9A1700EBA34B /* DanPinCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFD31AAE9A1700EBA34B /* DanPinCategory.m */; };
+		7BE2FFD81AAEA08100EBA34B /* DanPinCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFD61AAEA08100EBA34B /* DanPinCollectionViewCell.m */; };
+		7BE2FFD91AAEA08100EBA34B /* DanPinCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFD71AAEA08100EBA34B /* DanPinCollectionViewCell.xib */; };
+		7BE2FFDC1AAEB5A200EBA34B /* DanPinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFDB1AAEB5A200EBA34B /* DanPinModel.m */; };
+		7BE2FFE21AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFE11AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.m */; };
+		7BE2FFE51AAECF7000EBA34B /* JKJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFE41AAECF7000EBA34B /* JKJViewController.m */; };
+		7BE2FFE81AAECF8D00EBA34B /* BanJiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFE71AAECF8D00EBA34B /* BanJiaViewController.m */; };
+		7BE2FFEB1AAED4FA00EBA34B /* JKJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFEA1AAED4FA00EBA34B /* JKJModel.m */; };
+		7BE2FFEE1AAED50B00EBA34B /* BanJiaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFED1AAED50B00EBA34B /* BanJiaModel.m */; };
+		7BE2FFF21AAEDC8D00EBA34B /* JKJCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFF01AAEDC8D00EBA34B /* JKJCollectionViewCell.m */; };
+		7BE2FFF31AAEDC8D00EBA34B /* JKJCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFF11AAEDC8D00EBA34B /* JKJCollectionViewCell.xib */; };
+		7BE2FFF71AAEDCA800EBA34B /* BanJiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFF51AAEDCA800EBA34B /* BanJiaTableViewCell.m */; };
+		7BE2FFF81AAEDCA800EBA34B /* BanJiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE2FFF61AAEDCA800EBA34B /* BanJiaTableViewCell.xib */; };
+		7BE2FFFB1AAEE3D900EBA34B /* SBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE2FFFA1AAEE3D900EBA34B /* SBTitleView.m */; };
 		7BE98CBB1AAB023D00D59E1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98CBA1AAB023D00D59E1C /* main.m */; };
 		7BE98CBE1AAB023D00D59E1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE98CBD1AAB023D00D59E1C /* AppDelegate.m */; };
 		7BE98CC01AAB023D00D59E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE98CBF1AAB023D00D59E1C /* Images.xcassets */; };
@@ -147,9 +164,39 @@
 		7BE2FFB81AADF8E500EBA34B /* DaPeiInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableViewCell.h; sourceTree = "<group>"; };
 		7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableViewCell.m; sourceTree = "<group>"; };
 		7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableViewCell.xib; sourceTree = "<group>"; };
-		7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableFooterView.h; sourceTree = "<group>"; };
-		7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableFooterView.m; sourceTree = "<group>"; };
-		7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableFooterView.xib; sourceTree = "<group>"; };
+		7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableFooterViewCell.h; sourceTree = "<group>"; };
+		7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableFooterViewCell.m; sourceTree = "<group>"; };
+		7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableFooterViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFCA1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaPeiInfoTableHeaderViewCell.h; sourceTree = "<group>"; };
+		7BE2FFCB1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaPeiInfoTableHeaderViewCell.m; sourceTree = "<group>"; };
+		7BE2FFCC1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaPeiInfoTableHeaderViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFCF1AAE954600EBA34B /* DanPinCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanPinCollectionViewController.h; sourceTree = "<group>"; };
+		7BE2FFD01AAE954600EBA34B /* DanPinCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanPinCollectionViewController.m; sourceTree = "<group>"; };
+		7BE2FFD21AAE9A1700EBA34B /* DanPinCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanPinCategory.h; sourceTree = "<group>"; };
+		7BE2FFD31AAE9A1700EBA34B /* DanPinCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanPinCategory.m; sourceTree = "<group>"; };
+		7BE2FFD51AAEA08100EBA34B /* DanPinCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanPinCollectionViewCell.h; sourceTree = "<group>"; };
+		7BE2FFD61AAEA08100EBA34B /* DanPinCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanPinCollectionViewCell.m; sourceTree = "<group>"; };
+		7BE2FFD71AAEA08100EBA34B /* DanPinCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DanPinCollectionViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFDA1AAEB5A200EBA34B /* DanPinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanPinModel.h; sourceTree = "<group>"; };
+		7BE2FFDB1AAEB5A200EBA34B /* DanPinModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanPinModel.m; sourceTree = "<group>"; };
+		7BE2FFE01AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DanPinCollectionViewCell+Configure.h"; sourceTree = "<group>"; };
+		7BE2FFE11AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DanPinCollectionViewCell+Configure.m"; sourceTree = "<group>"; };
+		7BE2FFE31AAECF7000EBA34B /* JKJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKJViewController.h; sourceTree = "<group>"; };
+		7BE2FFE41AAECF7000EBA34B /* JKJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKJViewController.m; sourceTree = "<group>"; };
+		7BE2FFE61AAECF8D00EBA34B /* BanJiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BanJiaViewController.h; sourceTree = "<group>"; };
+		7BE2FFE71AAECF8D00EBA34B /* BanJiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BanJiaViewController.m; sourceTree = "<group>"; };
+		7BE2FFE91AAED4FA00EBA34B /* JKJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKJModel.h; sourceTree = "<group>"; };
+		7BE2FFEA1AAED4FA00EBA34B /* JKJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKJModel.m; sourceTree = "<group>"; };
+		7BE2FFEC1AAED50B00EBA34B /* BanJiaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BanJiaModel.h; sourceTree = "<group>"; };
+		7BE2FFED1AAED50B00EBA34B /* BanJiaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BanJiaModel.m; sourceTree = "<group>"; };
+		7BE2FFEF1AAEDC8D00EBA34B /* JKJCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKJCollectionViewCell.h; sourceTree = "<group>"; };
+		7BE2FFF01AAEDC8D00EBA34B /* JKJCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKJCollectionViewCell.m; sourceTree = "<group>"; };
+		7BE2FFF11AAEDC8D00EBA34B /* JKJCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKJCollectionViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFF41AAEDCA800EBA34B /* BanJiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BanJiaTableViewCell.h; sourceTree = "<group>"; };
+		7BE2FFF51AAEDCA800EBA34B /* BanJiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BanJiaTableViewCell.m; sourceTree = "<group>"; };
+		7BE2FFF61AAEDCA800EBA34B /* BanJiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BanJiaTableViewCell.xib; sourceTree = "<group>"; };
+		7BE2FFF91AAEE3D900EBA34B /* SBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTitleView.h; path = TabBar/SBTitleView.h; sourceTree = "<group>"; };
+		7BE2FFFA1AAEE3D900EBA34B /* SBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBTitleView.m; path = TabBar/SBTitleView.m; sourceTree = "<group>"; };
 		7BE98CB51AAB023D00D59E1C /* EShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE98CB91AAB023D00D59E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BE98CBA1AAB023D00D59E1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -247,8 +294,19 @@
 		7BE2FF751AADA2F400EBA34B /* DanPin */ = {
 			isa = PBXGroup;
 			children = (
+				7BE2FFD21AAE9A1700EBA34B /* DanPinCategory.h */,
+				7BE2FFD31AAE9A1700EBA34B /* DanPinCategory.m */,
+				7BE2FFDA1AAEB5A200EBA34B /* DanPinModel.h */,
+				7BE2FFDB1AAEB5A200EBA34B /* DanPinModel.m */,
 				7BE2FF761AADA2F400EBA34B /* DanPinViewController.h */,
 				7BE2FF771AADA2F400EBA34B /* DanPinViewController.m */,
+				7BE2FFCF1AAE954600EBA34B /* DanPinCollectionViewController.h */,
+				7BE2FFD01AAE954600EBA34B /* DanPinCollectionViewController.m */,
+				7BE2FFD51AAEA08100EBA34B /* DanPinCollectionViewCell.h */,
+				7BE2FFD61AAEA08100EBA34B /* DanPinCollectionViewCell.m */,
+				7BE2FFD71AAEA08100EBA34B /* DanPinCollectionViewCell.xib */,
+				7BE2FFE01AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.h */,
+				7BE2FFE11AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.m */,
 			);
 			path = DanPin;
 			sourceTree = "<group>";
@@ -262,20 +320,23 @@
 				7BE2FF9F1AADBC6900EBA34B /* DaPeiCategory.m */,
 				7BE2FFAA1AADF58200EBA34B /* DaPeiInfoModel.h */,
 				7BE2FFAB1AADF58200EBA34B /* DaPeiInfoModel.m */,
+				7BE2FF7E1AADA2F400EBA34B /* DaPeiViewController.h */,
+				7BE2FF7F1AADA2F400EBA34B /* DaPeiViewController.m */,
+				7BE2FFA41AADD07D00EBA34B /* DaPeiCollectionViewController.h */,
+				7BE2FFA51AADD07D00EBA34B /* DaPeiCollectionViewController.m */,
 				7BE2FFA11AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.h */,
 				7BE2FFA21AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m */,
 				7BE2FF791AADA2F400EBA34B /* DaPeiCollectionViewCell.h */,
 				7BE2FF7A1AADA2F400EBA34B /* DaPeiCollectionViewCell.m */,
 				7BE2FF7B1AADA2F400EBA34B /* DaPeiCollectionViewCell.xib */,
-				7BE2FF7E1AADA2F400EBA34B /* DaPeiViewController.h */,
-				7BE2FF7F1AADA2F400EBA34B /* DaPeiViewController.m */,
-				7BE2FFA41AADD07D00EBA34B /* DaPeiCollectionViewController.h */,
-				7BE2FFA51AADD07D00EBA34B /* DaPeiCollectionViewController.m */,
 				7BE2FFB51AADF87F00EBA34B /* DaPeiInfoViewController.h */,
 				7BE2FFB61AADF87F00EBA34B /* DaPeiInfoViewController.m */,
-				7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterView.h */,
-				7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterView.m */,
-				7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib */,
+				7BE2FFCA1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.h */,
+				7BE2FFCB1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.m */,
+				7BE2FFCC1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.xib */,
+				7BE2FFC21AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.h */,
+				7BE2FFC31AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.m */,
+				7BE2FFC41AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.xib */,
 				7BE2FFB81AADF8E500EBA34B /* DaPeiInfoTableViewCell.h */,
 				7BE2FFB91AADF8E500EBA34B /* DaPeiInfoTableViewCell.m */,
 				7BE2FFBA1AADF8E500EBA34B /* DaPeiInfoTableViewCell.xib */,
@@ -286,8 +347,22 @@
 		7BE2FF801AADA2F400EBA34B /* FaXian */ = {
 			isa = PBXGroup;
 			children = (
+				7BE2FFE91AAED4FA00EBA34B /* JKJModel.h */,
+				7BE2FFEA1AAED4FA00EBA34B /* JKJModel.m */,
+				7BE2FFEC1AAED50B00EBA34B /* BanJiaModel.h */,
+				7BE2FFED1AAED50B00EBA34B /* BanJiaModel.m */,
+				7BE2FFEF1AAEDC8D00EBA34B /* JKJCollectionViewCell.h */,
+				7BE2FFF01AAEDC8D00EBA34B /* JKJCollectionViewCell.m */,
+				7BE2FFF11AAEDC8D00EBA34B /* JKJCollectionViewCell.xib */,
+				7BE2FFF41AAEDCA800EBA34B /* BanJiaTableViewCell.h */,
+				7BE2FFF51AAEDCA800EBA34B /* BanJiaTableViewCell.m */,
+				7BE2FFF61AAEDCA800EBA34B /* BanJiaTableViewCell.xib */,
 				7BE2FF811AADA2F400EBA34B /* FaXianViewController.h */,
 				7BE2FF821AADA2F400EBA34B /* FaXianViewController.m */,
+				7BE2FFE31AAECF7000EBA34B /* JKJViewController.h */,
+				7BE2FFE41AAECF7000EBA34B /* JKJViewController.m */,
+				7BE2FFE61AAECF8D00EBA34B /* BanJiaViewController.h */,
+				7BE2FFE71AAECF8D00EBA34B /* BanJiaViewController.m */,
 			);
 			path = FaXian;
 			sourceTree = "<group>";
@@ -453,6 +528,8 @@
 				7BE98D7D1AAB331D00D59E1C /* SBNavTabBarController.m */,
 				7BE98D781AAB331D00D59E1C /* RootViewController.h */,
 				7BE98D791AAB331D00D59E1C /* RootViewController.m */,
+				7BE2FFF91AAEE3D900EBA34B /* SBTitleView.h */,
+				7BE2FFFA1AAEE3D900EBA34B /* SBTitleView.m */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -572,11 +649,13 @@
 				7BE98D201AAB042D00D59E1C /* bottom_share_button_hover.png in Resources */,
 				7BE98D421AAB042D00D59E1C /* tabItem2@2x.png in Resources */,
 				7BE98D171AAB042D00D59E1C /* AppIcon40x40@2x.png in Resources */,
+				7BE2FFF31AAEDC8D00EBA34B /* JKJCollectionViewCell.xib in Resources */,
 				7BE98D441AAB042D00D59E1C /* tabItem_0@2x.png in Resources */,
 				7BE98D411AAB042D00D59E1C /* tabItem1@2x.png in Resources */,
 				7BE98D3E1AAB042D00D59E1C /* smabg@2x.png in Resources */,
 				7BE98D451AAB042D00D59E1C /* tabItem_1@2x.png in Resources */,
 				7BE98D4A1AAB042D00D59E1C /* toolBar@2x.png in Resources */,
+				7BE2FFCE1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.xib in Resources */,
 				7BE98D1A1AAB042D00D59E1C /* AppIcon60x60@2x.png in Resources */,
 				7BE98D141AAB042D00D59E1C /* 114.png in Resources */,
 				7BE98D2E1AAB042D00D59E1C /* LaunchImage.png in Resources */,
@@ -591,7 +670,7 @@
 				7BE98D401AAB042D00D59E1C /* tabItem0@2x.png in Resources */,
 				7BE98D2C1AAB042D00D59E1C /* LaunchImage-700-568h@2x.png in Resources */,
 				7BE98D3D1AAB042D00D59E1C /* smabg.png in Resources */,
-				7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterView.xib in Resources */,
+				7BE2FFC61AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.xib in Resources */,
 				7BE98D3C1AAB042D00D59E1C /* shippingFree.png in Resources */,
 				7BE98D301AAB042D00D59E1C /* left.png in Resources */,
 				7BE98D2B1AAB042D00D59E1C /* LaunchImage-568h@2x.png in Resources */,
@@ -604,6 +683,7 @@
 				7BE98D4B1AAB042D00D59E1C /* webView_4@2x.png in Resources */,
 				7BE98D291AAB042D00D59E1C /* halfPriceDetail@2x.png in Resources */,
 				7BE98D481AAB042D00D59E1C /* talentList@2x.png in Resources */,
+				7BE2FFF81AAEDCA800EBA34B /* BanJiaTableViewCell.xib in Resources */,
 				7BE98D1D1AAB042D00D59E1C /* bgd_color.png in Resources */,
 				7BE98D311AAB042D00D59E1C /* left@2x.png in Resources */,
 				7BE98D261AAB042D00D59E1C /* goodsDislike.png in Resources */,
@@ -613,6 +693,7 @@
 				7BE98D2F1AAB042D00D59E1C /* LaunchImage@2x.png in Resources */,
 				7BE98D181AAB042D00D59E1C /* AppIcon57x57.png in Resources */,
 				7BE98D371AAB042D00D59E1C /* myProfile_7@2x.png in Resources */,
+				7BE2FFD91AAEA08100EBA34B /* DanPinCollectionViewCell.xib in Resources */,
 				7BE98D341AAB042D00D59E1C /* loadingIcon@2x.png in Resources */,
 				7BE2FF9A1AADB98A00EBA34B /* goodsIcon.png in Resources */,
 				7BE98D281AAB042D00D59E1C /* goodsLike.png in Resources */,
@@ -682,26 +763,39 @@
 			files = (
 				7BE98CBE1AAB023D00D59E1C /* AppDelegate.m in Sources */,
 				7BE2FFA31AADCC4800EBA34B /* DaPeiCollectionViewCell+Configure.m in Sources */,
-				7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterView.m in Sources */,
+				7BE2FFF71AAEDCA800EBA34B /* BanJiaTableViewCell.m in Sources */,
+				7BE2FFD81AAEA08100EBA34B /* DanPinCollectionViewCell.m in Sources */,
+				7BE2FFE81AAECF8D00EBA34B /* BanJiaViewController.m in Sources */,
+				7BE2FFC51AAE00C200EBA34B /* DaPeiInfoTableFooterViewCell.m in Sources */,
+				7BE2FFE51AAECF7000EBA34B /* JKJViewController.m in Sources */,
 				7BE98D7F1AAB331D00D59E1C /* SBTabBar.m in Sources */,
 				7BE2FF831AADA2F400EBA34B /* DanPinViewController.m in Sources */,
 				7BE2FF881AADA2F400EBA34B /* FaXianViewController.m in Sources */,
+				7BE2FFEE1AAED50B00EBA34B /* BanJiaModel.m in Sources */,
 				7BE2FF861AADA2F400EBA34B /* DaPeiModel.m in Sources */,
 				7BE98D7E1AAB331D00D59E1C /* RootViewController.m in Sources */,
+				7BE2FFF21AAEDC8D00EBA34B /* JKJCollectionViewCell.m in Sources */,
 				7BE2FFBB1AADF8E500EBA34B /* DaPeiInfoTableViewCell.m in Sources */,
+				7BE2FFD41AAE9A1700EBA34B /* DanPinCategory.m in Sources */,
 				7BE2FF841AADA2F400EBA34B /* DaPeiCollectionViewCell.m in Sources */,
 				7BE98CBB1AAB023D00D59E1C /* main.m in Sources */,
+				7BE2FFD11AAE954600EBA34B /* DanPinCollectionViewController.m in Sources */,
 				7BE2FF681AAD903000EBA34B /* WebServer.m in Sources */,
+				7BE2FFDC1AAEB5A200EBA34B /* DanPinModel.m in Sources */,
 				7BE2FF941AADA30900EBA34B /* WaterfallCollectionViewCell.m in Sources */,
+				7BE2FFFB1AAEE3D900EBA34B /* SBTitleView.m in Sources */,
 				7BE2FFA61AADD07D00EBA34B /* DaPeiCollectionViewController.m in Sources */,
 				7BE2FF291AAD51DA00EBA34B /* URL.m in Sources */,
+				7BE2FFEB1AAED4FA00EBA34B /* JKJModel.m in Sources */,
 				7BE2FF961AADA30900EBA34B /* WaterfallCollectionViewLayout.m in Sources */,
 				7BE2FFB71AADF87F00EBA34B /* DaPeiInfoViewController.m in Sources */,
 				7BE2FF971AADA30900EBA34B /* WaterfallViewController.m in Sources */,
 				7BE2FFA01AADBC6900EBA34B /* DaPeiCategory.m in Sources */,
 				7BE2FF981AADA30900EBA34B /* WoDeViewController.m in Sources */,
+				7BE2FFCD1AAE84FA00EBA34B /* DaPeiInfoTableHeaderViewCell.m in Sources */,
 				7BE2FF871AADA2F400EBA34B /* DaPeiViewController.m in Sources */,
 				7BE98D801AAB331D00D59E1C /* SBNavTabBarController.m in Sources */,
+				7BE2FFE21AAEB80F00EBA34B /* DanPinCollectionViewCell+Configure.m in Sources */,
 				7BE2FFAC1AADF58200EBA34B /* DaPeiInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,25 @@
 
 @interface URL : NSObject
 
+#pragma mark - DaPei
+
 + (NSURL *)daPeiURL;
 
-+ (NSURL *)daPeiCatagoryURLWithCid:(NSString *)cid page:(NSInteger)page;
++ (NSURL *)daPeiCategoryURLWithCid:(NSString *)cid page:(NSInteger)page;
 
 + (NSURL *)daPeiInfoURLWithParam:(NSNumber *)param;
+
+
+#pragma mark - DanPin
+
++ (NSURL *)danPinURL;
+
++ (NSURL *)danPinCategoryURLWithCid:(NSString *)cid page:(NSInteger)page;
+
+
+#pragma mark - FaXian
+
++ (NSURL *)jiuKuaiJiuURL;
++ (NSURL *)banJiaURL;
 
 @end
