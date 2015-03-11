@@ -1,5 +1,5 @@
 //
-//  BanJiaViewController.h
+//  SBWebViewController.h
 //  EShopping
 //
 //  Created by 任龙宇 on 15/3/11.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BanJiaViewController : UITableViewController
+@interface SBWebViewController : UIViewController
+
+@property (nonatomic, strong) NSURL *url;
 
 @end

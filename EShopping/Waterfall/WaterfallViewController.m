@@ -54,6 +54,7 @@ static NSString * const faXianCell = @"FaXianCollectionViewCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.937 alpha:1];
     
     [self waterfallView];    
 }
@@ -84,14 +85,6 @@ static NSString * const faXianCell = @"FaXianCollectionViewCell";
             return faXianCell;
     }
 }
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (scrollView.contentOffset.y > 100) {
-//        [self.navigationController setNavigationBarHidden:YES animated:YES];
-//    } else if (scrollView.contentOffset.y < 100) {
-//        [self.navigationController setNavigationBarHidden:NO animated:YES];
-//    }
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

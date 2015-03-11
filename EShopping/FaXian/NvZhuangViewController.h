@@ -1,5 +1,5 @@
 //
-//  BanJiaViewController.h
+//  NvZhuangViewController.h
 //  EShopping
 //
 //  Created by 任龙宇 on 15/3/11.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BanJiaViewController : UITableViewController
+@interface NvZhuangViewController : UIViewController
+
+@property (nonatomic, strong) NSURLRequest *request;
 
 @end

@@ -8,14 +8,13 @@
 
 #import "DanPinCollectionViewCell+Configure.h"
 #import "DanPinModel.h"
-#import "UIImageView+SDWebImage_M13ProgressSuite.h"
+#import "UIImageView+WebCache.h"
 
 
 @implementation DanPinCollectionViewCell (Configure)
 
 - (void)configureCellWithModel:(DanPinModel *)model {
-    [self.picView setImageUsingProgressViewRingWithURL:[NSURL URLWithString:model.img] placeholderImage:nil options:SDWebImageRetryFailed progress:nil completed:nil ProgressPrimaryColor:[UIColor grayColor] ProgressSecondaryColor:nil Diameter:40];
-    
+    [self.picView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil options:SDWebImageRetryFailed];
     self.priceLabel.text = [NSString stringWithFormat:@"￥%@", model.price];
 }
 

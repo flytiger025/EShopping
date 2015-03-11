@@ -11,6 +11,7 @@
 #import "JKJViewController.h"
 #import "BanJiaViewController.h"
 #import "Macro.h"
+#import "NvZhuangViewController.h"
 
 @interface FaXianViewController () <SBTitleViewDelegate, UIScrollViewDelegate>
 {
@@ -26,13 +27,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.937 alpha:1];
+
     self.titleView = [[SBTitleView alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
     _titleView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:1];
     _titleView.delegate = self;
     _titleView.leftButtonTitle = @"九块九";
     _titleView.rightButtonTitle = @"半价";
     self.navigationItem.titleView = self.titleView;
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"threeBars"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     JKJViewController *jkjVC = [[JKJViewController alloc] init];
     [self addChildViewController:jkjVC];
@@ -59,6 +64,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)rightItemAction:(UIBarButtonItem *)rightItem {
+    NvZhuangViewController *nzViewController = [[NvZhuangViewController alloc] init];
+    nzViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:nzViewController animated:YES];
 }
 
 #pragma mark - SBTitleViewDelegate

@@ -31,4 +31,6 @@
 + (NSURL *)jiuKuaiJiuURL;
 + (NSURL *)banJiaURL;
 
++ (NSURL *)faXianURLWithNumID:(NSString *)numID;
+
 @end

@@ -49,4 +49,11 @@
     return [NSURL URLWithString:@"http://jkjby.repai.com/jkjby/view/tmzk19_9_api.php?cid=0"];
 }
 
+#pragma mark - 
+
++ (NSURL *)faXianURLWithNumID:(NSString *)numID {
+    NSString *urlString = [NSString stringWithFormat:@"http://cloud.yijia.com/goto/item.php?app_channel=appstore&id=%@&sche=aizhuangban", numID];
+    return [NSURL URLWithString:urlString];
+}
+
 @end

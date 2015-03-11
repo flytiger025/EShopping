@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SBWebViewController">
+            <connections>
+                <outlet property="leftItem" destination="6MA-a4-Yts" id="Ak4-te-VXp"/>
+                <outlet property="refreshItem" destination="j9D-PE-Ehj" id="meN-uH-JKz"/>
+                <outlet property="rightItem" destination="KAP-Ug-CsK" id="cXR-xN-1ts"/>
+                <outlet property="sharedItem" destination="g9e-c2-k1H" id="cqf-yr-mKM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="Sk0-cS-Jyx" id="hyk-G9-9HZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8z-Xa-RXd">
+                    <rect key="frame" x="1" y="523" width="318" height="44"/>
+                    <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="t6C-Dm-A2H"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="left.png" id="6MA-a4-Yts">
+                            <color key="tintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="4XM-D5-nDG"/>
+                        <barButtonItem image="right.png" id="KAP-Ug-CsK">
+                            <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="T42-Fg-b8l"/>
+                        <barButtonItem image="webView_4.png" id="j9D-PE-Ehj">
+                            <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem image="bottom_share_button_hover.png" id="g9e-c2-k1H">
+                            <color key="tintColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-cS-Jyx">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="523"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="XKm-ni-c8n"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="A8z-Xa-RXd" firstAttribute="top" secondItem="Sk0-cS-Jyx" secondAttribute="bottom" id="87R-G1-7fb"/>
+                <constraint firstItem="Sk0-cS-Jyx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BSc-zM-58G"/>
+                <constraint firstAttribute="trailing" secondItem="Sk0-cS-Jyx" secondAttribute="trailing" id="EwQ-lP-AFa"/>
+                <constraint firstAttribute="bottom" secondItem="A8z-Xa-RXd" secondAttribute="bottom" constant="1" id="Ftg-mC-PQS"/>
+                <constraint firstItem="A8z-Xa-RXd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="1" id="OWB-IE-UjH"/>
+                <constraint firstItem="Sk0-cS-Jyx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YOq-sN-ePg"/>
+                <constraint firstAttribute="trailing" secondItem="A8z-Xa-RXd" secondAttribute="trailing" constant="1" id="ib0-o8-l8L"/>
+            </constraints>
+            <point key="canvasLocation" x="294" y="314"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bottom_share_button_hover.png" width="32" height="32"/>
+        <image name="left.png" width="11" height="20"/>
+        <image name="right.png" width="11" height="20"/>
+        <image name="webView_4.png" width="29" height="29"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

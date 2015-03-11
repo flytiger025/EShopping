@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 renlongyu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WaterfallViewController.h"
 
-@interface JKJViewController : UIViewController
+@interface JKJViewController : WaterfallViewController
 
 @end

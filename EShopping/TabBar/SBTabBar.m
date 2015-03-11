@@ -27,8 +27,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.shadowRadius = 5.0f;
-        self.layer.shadowOpacity = 5.0f;
         self.layer.borderColor = [UIColor colorWithRed:0.816 green:0.816 blue:0.816 alpha:1].CGColor;
         self.layer.borderWidth = 0.5f;
         

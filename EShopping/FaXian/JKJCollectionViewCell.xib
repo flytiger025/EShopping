@@ -7,16 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JKJCollectionViewCell" id="gTV-IL-0wX" customClass="JKJCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="216" height="267"/>
+            <rect key="frame" x="0.0" y="0.0" width="216" height="289"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="216" height="267"/>
+                <rect key="frame" x="0.0" y="0.0" width="216" height="289"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jP-9b-afZ">
-                        <rect key="frame" x="-8" y="-8" width="232" height="208"/>
+                        <rect key="frame" x="-8" y="-7" width="232" height="230"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥14.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fk-FL-Ynd">
-                        <rect key="frame" x="8" y="202" width="51" height="21"/>
+                        <rect key="frame" x="8" y="225" width="51" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="eep-tv-QXB"/>
                             <constraint firstAttribute="height" constant="21" id="wvp-3k-wkR"/>
@@ -26,13 +26,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="随身WiFi2代移动无线路由器随身网卡" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycU-7n-QEu">
-                        <rect key="frame" x="8" y="218" width="200" height="41"/>
+                        <rect key="frame" x="8" y="241" width="200" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥39.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Bn-ldW">
-                        <rect key="frame" x="157" y="202" width="51" height="21"/>
+                        <rect key="frame" x="157" y="225" width="51" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Bd9-Lm-ZOJ"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="Wfe-Id-rqj"/>
@@ -44,28 +44,29 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="0jP-9b-afZ" secondAttribute="bottom" constant="67" id="68d-TA-0sd"/>
+                <constraint firstAttribute="bottom" secondItem="0jP-9b-afZ" secondAttribute="bottom" constant="66" id="68d-TA-0sd"/>
                 <constraint firstAttribute="trailing" secondItem="M4s-Bn-ldW" secondAttribute="trailing" constant="8" id="G89-lH-xCs"/>
-                <constraint firstItem="0jP-9b-afZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-8" id="Rkw-Kz-yYg"/>
+                <constraint firstItem="0jP-9b-afZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-7" id="Rkw-Kz-yYg"/>
                 <constraint firstItem="M4s-Bn-ldW" firstAttribute="top" secondItem="0jP-9b-afZ" secondAttribute="bottom" constant="2" id="YZs-ke-5d9"/>
                 <constraint firstAttribute="trailing" secondItem="0jP-9b-afZ" secondAttribute="trailing" constant="-8" id="ZTU-wj-DHb"/>
                 <constraint firstItem="1fk-FL-Ynd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="aEM-OD-73N"/>
                 <constraint firstItem="1fk-FL-Ynd" firstAttribute="top" secondItem="0jP-9b-afZ" secondAttribute="bottom" constant="2" id="aJy-49-K6j"/>
                 <constraint firstAttribute="trailing" secondItem="ycU-7n-QEu" secondAttribute="trailing" constant="8" id="bSM-mk-0RC"/>
-                <constraint firstAttribute="bottom" secondItem="ycU-7n-QEu" secondAttribute="bottom" constant="8" id="bjJ-HX-1a7"/>
+                <constraint firstAttribute="bottom" secondItem="ycU-7n-QEu" secondAttribute="bottom" constant="7" id="bjJ-HX-1a7"/>
                 <constraint firstItem="ycU-7n-QEu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="rcx-CU-e2T"/>
                 <constraint firstItem="ycU-7n-QEu" firstAttribute="top" secondItem="0jP-9b-afZ" secondAttribute="bottom" constant="18" id="uaB-v3-4OG"/>
                 <constraint firstItem="0jP-9b-afZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="-8" id="v8g-Dj-6Z7"/>
             </constraints>
-            <size key="customSize" width="216" height="267"/>
+            <size key="customSize" width="216" height="289"/>
             <connections>
                 <outlet property="imageView" destination="0jP-9b-afZ" id="f93-F6-Bxu"/>
                 <outlet property="nowPriceLabel" destination="1fk-FL-Ynd" id="JRS-Cn-KMx"/>
                 <outlet property="originPriceLabel" destination="M4s-Bn-ldW" id="taw-SU-9hq"/>
                 <outlet property="titleLabel" destination="ycU-7n-QEu" id="adU-bg-qyH"/>
             </connections>
-            <point key="canvasLocation" x="489" y="364.5"/>
+            <point key="canvasLocation" x="489" y="353.5"/>
         </collectionViewCell>
     </objects>
 </document>

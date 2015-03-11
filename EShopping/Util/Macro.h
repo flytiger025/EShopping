@@ -26,5 +26,6 @@
 
 #define RANDOM_COLOR    [UIColor colorWithRed:arc4random() % 256 / 255. green:arc4random() % 256 / 255. blue:arc4random() % 256 / 255. alpha:1.]
 
+#define NV_ZHUANG_URL @"http://zhekou.repai.com/lws/view/nvzhuang_mobile.php?app_id=2222&sche=fenfen"
 
 #endif

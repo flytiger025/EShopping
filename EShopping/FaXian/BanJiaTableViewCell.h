@@ -10,4 +10,10 @@
 
 @interface BanJiaTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *picView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nowPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *originPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *discountLabel;
+
 @end

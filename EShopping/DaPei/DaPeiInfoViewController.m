@@ -7,7 +7,6 @@
 //
 
 #import "DaPeiInfoViewController.h"
-#import "DaPeiInfoTableViewCell.h"
 #import "DaPeiInfoTableFooterViewCell.h"
 #import "DaPeiInfoModel.h"
 #import "WebServer.h"
@@ -15,6 +14,8 @@
 #import "Macro.h"
 #import "DaPeiInfoTableHeaderViewCell.h"
 #import "UIImageView+SDWebImage_M13ProgressSuite.h"
+#import "DaPeiInfoTableViewCell+Configure.h"
+#import "SBWebViewController.h"
 
 
 static NSString * const daPeiCellIdentifier = @"DaPeiInfoTableViewCell";
@@ -38,7 +39,13 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
     self.dataArray = [NSMutableArray array];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"newBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(backItem:)];
+    self.navigationController.hidesBarsOnSwipe = YES;
+    
+    UIImage *image = [[UIImage imageNamed:@"newBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(backItem:)];
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 
     [self.tableView registerNib:[UINib nibWithNibName:daPeiCellIdentifier bundle:nil] forCellReuseIdentifier:daPeiCellIdentifier];
@@ -64,11 +71,24 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController.isNavigationBarHidden) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+}
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
     NSString *imageURL = responseObject[@"big_pic"];
-    [self.headerView setImageUsingProgressViewRingWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil options:SDWebImageRetryFailed progress:nil completed:nil ProgressPrimaryColor:[UIColor grayColor] ProgressSecondaryColor:nil Diameter:60];
+    
+    __weak DaPeiInfoViewController *blockSelf = self;
+    [self.headerView setImageUsingProgressViewRingWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (error) {
+            blockSelf.headerView.image = [UIImage imageNamed:@"loading"];
+        }
+    } ProgressPrimaryColor:[UIColor lightGrayColor] ProgressSecondaryColor:nil Diameter:60];
     
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"goods"]) {
@@ -106,9 +126,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     }else if (indexPath.section == 1) {
         DaPeiInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:daPeiCellIdentifier forIndexPath:indexPath];
         DaPeiInfoModel *model = self.dataArray[indexPath.row];
-        [cell.picView sd_setImageWithURL:[NSURL URLWithString:model.smallImageURL] placeholderImage:[UIImage imageNamed:@"loading"]];
-        cell.titleLabel.text = model.title;
-        cell.priceLabel.text = [NSString stringWithFormat:@"￥%@", model.nowPrice];
+        [cell configuredCellWithModel:model];
         return cell;
         
     } else {
@@ -125,8 +143,13 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO: 搭配信息cell点击事件
-    NSLog(@"----");
+    if (indexPath.section == 1) {
+        DaPeiInfoModel *model = self.dataArray[indexPath.row];
+        SBWebViewController *webViewController = [[SBWebViewController alloc] init];
+        webViewController.url = [NSURL URLWithString:model.url];
+        webViewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:webViewController animated:YES];
+    }
 }
 
 @end

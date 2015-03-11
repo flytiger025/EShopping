@@ -13,6 +13,7 @@
 #import "WebServer.h"
 #import "URL.h"
 #import "DanPinModel.h"
+#import "SBWebViewController.h"
 
 static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 
@@ -93,7 +94,11 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO: 单品cell点击事件
-    NSLog(@"-----");
+    DanPinModel *model = self.dataArray[indexPath.row];
+    SBWebViewController *webViewController = [[SBWebViewController alloc] init];
+    webViewController.url = [NSURL URLWithString:model.url];
+    webViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
+
 @end

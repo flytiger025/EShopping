@@ -41,6 +41,14 @@
     [webServer requestDataWithURL:[URL daPeiCategoryURLWithCid:self.category page:_currentPage]];    
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController.isNavigationBarHidden) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.navigationController.hidesBarsOnSwipe = NO;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

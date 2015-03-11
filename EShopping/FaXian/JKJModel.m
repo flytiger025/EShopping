@@ -1,5 +1,5 @@
 //
-//  JKJModel.m
+//  BanJiaModel.m
 //  EShopping
 //
 //  Created by 任龙宇 on 15/3/10.
@@ -10,22 +10,25 @@
 
 @implementation JKJModel
 
-- (NSDictionary *)undefinedKeyMap {
-    return @{@"deal_num": @"dealNumber",
-             @"is_onsale": @"isOnsale",
-             @"is_vip_price": @"isVipPrice",
-             @"now_price": @"nowPrice",
-             @"num_iid": @"numID",
-             @"origin_price": @"originPrice",
-             @"pic_url": @"picURL",
-             @"show_time": @"showTime",
-             @"start_discount": @"startDiscount",
-             @"total_love_number": @"loveNumber",
++ (JKJModel *)model {
+    return [[JKJModel alloc] init];
+}
+
+- (NSDictionary *)jkj_undefinedKeyMap {
+    return @{@"is_buy_sale": @"isBuySale",
+             @"ling_value": @"lingValue",
+             @"qiangpai": @"qiangPai",
+             @"total_hate_number": @"hateNumber"
              };
 }
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    [self setValue:value forKey:[self undefinedKeyMap][key]];
+- (void)setValue:(id)value forUndefinedKey:(NSString *)undefinedKey {
+    NSString *key = [self jkj_undefinedKeyMap][undefinedKey];
+    if (key) {
+        [self setValue:value forKey:key];
+    } else {
+        [super setValue:value forUndefinedKey:undefinedKey];
+    }    
 }
 
 @end

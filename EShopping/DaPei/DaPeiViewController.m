@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"搭配";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (instancetype)init
