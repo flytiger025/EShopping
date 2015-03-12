@@ -16,8 +16,8 @@
 - (void)configureCellWithModel:(BanJiaModel *)model {
     [self.picView sd_setImageWithURL:[NSURL URLWithString:model.picURL] placeholderImage:nil options:SDWebImageRetryFailed];
     self.titleLabel.text = model.title;
-    self.nowPriceLabel.text = [NSString stringWithFormat:@"￥%@", model.nowPrice];
-    NSString *string = [NSString stringWithFormat:@"￥%@", model.originPrice];
+    self.nowPriceLabel.text = [NSString stringWithFormat:@"￥%.1f", [model.nowPrice floatValue]];
+    NSString *string = [NSString stringWithFormat:@"￥%.1f", [model.originPrice floatValue]];
     self.originPriceLabel.attributedText = [string attributedStringWithStrikethrough];
     self.discountLabel.text = [NSString stringWithFormat:@"%@折", model.discount];
 }

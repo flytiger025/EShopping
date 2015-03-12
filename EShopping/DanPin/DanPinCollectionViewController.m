@@ -14,6 +14,7 @@
 #import "URL.h"
 #import "DanPinModel.h"
 #import "SBWebViewController.h"
+#import "MJRefresh.h"
 
 static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 
@@ -21,6 +22,7 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) BOOL isHeaderRefreshing;
 
 @end
 
@@ -40,9 +42,9 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
     
     [self.waterfallView registerNib:[UINib nibWithNibName:danPinCellIdentifier bundle:nil] forCellWithReuseIdentifier:danPinCellIdentifier];
     
-    WebServer *webServer = [[WebServer alloc] init];
-    webServer.delegate = self;
-    [webServer requestDataWithURL:[URL danPinCategoryURLWithCid:self.category page:_currentPage]];
+    [self.waterfallView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.waterfallView addFooterWithTarget:self action:@selector(fooderRefreshing)];
+    [self.waterfallView headerBeginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,9 +52,44 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Refresh
+
+- (void)webServerRequestData {
+    WebServer *webServer = [[WebServer alloc] init];
+    webServer.delegate = self;
+    [webServer requestDataWithURL:[URL danPinCategoryURLWithCid:self.category page:_currentPage]];
+}
+
+- (void)headerRereshing {
+    self.isHeaderRefreshing = YES;
+    self.currentPage = 1;
+    [self webServerRequestData];
+}
+
+- (void)fooderRefreshing {
+    self.isHeaderRefreshing = NO;
+    self.currentPage++;
+    [self webServerRequestData];
+}
+
+- (void)headerFooterEndRefreshing {
+    if (self.waterfallView.headerRefreshing) {
+        [self.waterfallView headerEndRefreshing];
+    }
+    
+    if (self.waterfallView.footerRefreshing) {
+        [self.waterfallView footerEndRefreshing];
+    }
+}
+
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if (self.isHeaderRefreshing) {
+        [self.dataArray removeAllObjects];
+    }
+
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"data"]) {
             DanPinModel *model = [DanPinModel model];
@@ -61,10 +98,13 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
         }
     }
     
+    [self headerFooterEndRefreshing];
     [self.waterfallView reloadData];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
+    [self headerFooterEndRefreshing];
+
     //TODO: 网络连接错误
     NSLog(@"网络连接错误");
 }

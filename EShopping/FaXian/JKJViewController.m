@@ -14,12 +14,14 @@
 #import "JKJModel.h"
 #import "Macro.h"
 #import "SBWebViewController.h"
+#import "MJRefresh.h"
 
 static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
 
 @interface JKJViewController () <UICollectionViewDataSource, UICollectionViewDelegate, WaterfallCollectionViewLayoutDelegate, WebServerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, assign) BOOL isHeaderRefreshing;
 
 @end
 
@@ -37,9 +39,9 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
     
     [self.waterfallView registerNib:[UINib nibWithNibName:JKJCellIdentifier bundle:nil] forCellWithReuseIdentifier:JKJCellIdentifier];
     
-    WebServer *webServer = [[WebServer alloc] init];
-    webServer.delegate = self;
-    [webServer requestDataWithURL:[URL jiuKuaiJiuURL]];
+    [self.waterfallView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.waterfallView addFooterWithTarget:self action:@selector(fooderRefreshing)];
+    [self.waterfallView headerBeginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,9 +49,46 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Refresh
+
+- (void)webServerRequestData {
+    WebServer *webServer = [[WebServer alloc] init];
+    webServer.delegate = self;
+    [webServer requestDataWithURL:[URL jiuKuaiJiuURL]];
+}
+
+- (void)headerRereshing {
+    self.isHeaderRefreshing = YES;
+    [self webServerRequestData];
+}
+
+- (void)fooderRefreshing {
+    self.isHeaderRefreshing = NO;
+//    [self webServerRequestData];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.waterfallView footerEndRefreshing];
+    });
+}
+
+- (void)headerFooterEndRefreshing {
+    if (self.waterfallView.headerRefreshing) {
+        [self.waterfallView headerEndRefreshing];
+    }
+    
+    if (self.waterfallView.footerRefreshing) {
+        [self.waterfallView footerEndRefreshing];
+    }
+}
+
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if (self.isHeaderRefreshing) {
+        [self.dataArray removeAllObjects];
+    }
+
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"list"]) {
             JKJModel *model = [JKJModel model];
@@ -58,10 +97,13 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
         }
     }
     
+    [self headerFooterEndRefreshing];
     [self.waterfallView reloadData];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
+    [self headerFooterEndRefreshing];
+
     //TODO: 网络连接错误
     NSLog(@"网络连接错误");
 }

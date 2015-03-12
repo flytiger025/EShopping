@@ -16,6 +16,8 @@
 #import "UIImageView+SDWebImage_M13ProgressSuite.h"
 #import "DaPeiInfoTableViewCell+Configure.h"
 #import "SBWebViewController.h"
+#import "SBImageViewController.h"
+#import "DaPeiModel.h"
 
 
 static NSString * const daPeiCellIdentifier = @"DaPeiInfoTableViewCell";
@@ -39,8 +41,6 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
     self.dataArray = [NSMutableArray array];
     
-    self.navigationController.hidesBarsOnSwipe = YES;
-    
     UIImage *image = [[UIImage imageNamed:@"newBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
                                                                              style:UIBarButtonItemStylePlain
@@ -52,14 +52,18 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     [self.tableView registerNib:[UINib nibWithNibName:footerViewIdentifier bundle:nil] forCellReuseIdentifier:footerViewIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:headerViewIdentifier bundle:nil] forCellReuseIdentifier:headerViewIdentifier];
     
-    self.headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    CGFloat height = [_model.imageHeight floatValue] / [_model.imageWidth floatValue] * SCREEN_WIDTH;
+    self.headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, height)];
+    _headerView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [_headerView addGestureRecognizer:tap];
     self.tableView.tableHeaderView = _headerView;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     WebServer *webServer = [[WebServer alloc] init];
     webServer.delegate = self;
-    [webServer requestDataWithURL:[URL daPeiInfoURLWithParam:self.param]];
+    [webServer requestDataWithURL:[URL daPeiInfoURLWithParam:self.model.param]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,11 +75,13 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (self.navigationController.isNavigationBarHidden) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
+- (void)tapAction:(UITapGestureRecognizer *)tap {
+    SBImageViewController *imageViewController = [[SBImageViewController alloc] init];
+    imageViewController.image = self.headerView.image;
+    imageViewController.imageWidth = [_model.imageWidth floatValue];
+    imageViewController.imageHeight = [_model.imageHeight floatValue];
+    imageViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentViewController:imageViewController animated:YES completion:nil];
 }
 
 #pragma mark - WebServerDelegate
@@ -131,7 +137,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
         
     } else {
         DaPeiInfoTableFooterViewCell *cell = [tableView dequeueReusableCellWithIdentifier:footerViewIdentifier forIndexPath:indexPath];
-        cell.label.text = [NSString stringWithFormat:@"%@个人喜欢", self.loveNumber];
+        cell.label.text = [NSString stringWithFormat:@"%@个人喜欢", self.model.loveNumber];
         return cell;
     }
 }

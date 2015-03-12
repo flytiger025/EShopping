@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class DaPeiInfoModel;
+@class DaPeiModel;
 
 @interface DaPeiInfoViewController : UITableViewController
 
-@property (nonatomic, strong) NSNumber *param;
-@property (nonatomic, strong) NSNumber *loveNumber;
+@property (nonatomic, strong) DaPeiModel *model;
 
 @end

@@ -14,7 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *goodsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *loveLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *goodsButton;
-@property (weak, nonatomic) IBOutlet UIButton *loveButton;
 
 @end

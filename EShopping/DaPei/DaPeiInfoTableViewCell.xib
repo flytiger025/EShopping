@@ -37,10 +37,10 @@
                                     <constraint firstAttribute="width" constant="10" id="AcU-cZ-OBN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥68" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-Bz-MuU">
-                                <rect key="frame" x="246" y="13" width="54" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-Bz-MuU">
+                                <rect key="frame" x="246" y="13" width="59" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="iqb-PP-ZUh"/>
+                                    <constraint firstAttribute="width" constant="59" id="iqb-PP-ZUh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.41176470590000003" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="Y8U-8a-Gen" firstAttribute="top" secondItem="hhi-eM-0fA" secondAttribute="top" constant="6" id="eKg-w5-0Nu"/>
                             <constraint firstItem="VCK-Bz-MuU" firstAttribute="top" secondItem="hhi-eM-0fA" secondAttribute="top" constant="13" id="f9T-UO-TeH"/>
                             <constraint firstAttribute="bottom" secondItem="din-RT-lPl" secondAttribute="bottom" id="hjh-Ma-JN6"/>
-                            <constraint firstAttribute="trailing" secondItem="VCK-Bz-MuU" secondAttribute="trailing" constant="18" id="ukT-Iw-ytc"/>
+                            <constraint firstAttribute="trailing" secondItem="VCK-Bz-MuU" secondAttribute="trailing" constant="13" id="ukT-Iw-ytc"/>
                             <constraint firstItem="din-RT-lPl" firstAttribute="top" secondItem="hhi-eM-0fA" secondAttribute="top" id="vCD-GS-Mtu"/>
                             <constraint firstAttribute="bottom" secondItem="VCK-Bz-MuU" secondAttribute="bottom" constant="13" id="zqv-al-OxP"/>
                         </constraints>

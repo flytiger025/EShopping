@@ -15,8 +15,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单品购买链接" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK6-jc-7Ba">
-                        <rect key="frame" x="15" y="14" width="297" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="18" y="14" width="294" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -24,7 +24,7 @@
                 <constraints>
                     <constraint firstItem="pK6-jc-7Ba" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="78v-9w-ulw"/>
                     <constraint firstItem="pK6-jc-7Ba" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FDY-FZ-wvO"/>
-                    <constraint firstItem="pK6-jc-7Ba" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="aj8-Qz-oUq"/>
+                    <constraint firstItem="pK6-jc-7Ba" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="aj8-Qz-oUq"/>
                     <constraint firstItem="pK6-jc-7Ba" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ilU-mQ-dH0"/>
                 </constraints>
             </tableViewCellContentView>

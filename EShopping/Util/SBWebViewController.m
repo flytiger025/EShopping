@@ -27,7 +27,7 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:_url]];
     
     self.navigationItem.title = @"宝贝详情";
-        
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     UIImage *image = [[UIImage imageNamed:@"newBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
@@ -35,13 +35,6 @@
                                                                             target:self
                                                                             action:@selector(backItemAction)];
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (self.navigationController.isNavigationBarHidden) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,18 +57,20 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
+    [self changeItemColor];
     [self.navigationController showProgress];
     [self.navigationController setProgress:0.3 animated:YES];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeProgress:) userInfo:nil repeats:NO];
-
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self changeItemColor];
     [self.navigationController finishProgress];
     [self.navigationController setProgress:0 animated:NO];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [self changeItemColor];
     [self.navigationController cancelProgress];
     [self.navigationController setProgress:0 animated:NO];
 }
@@ -90,5 +85,29 @@
     }
 }
 
+- (void)changeItemColor {
+    if ([self.webView canGoBack]) {
+        self.leftItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
+    }
+    if ([self.webView canGoForward]) {
+        self.rightItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
+    }
+}
+
+- (IBAction)back:(id)sender {
+    [self.webView goBack];
+}
+
+- (IBAction)forward:(id)sender {
+    [self.webView goForward];
+}
+
+- (IBAction)refresh:(id)sender {
+    [self.webView reload];
+}
+
+- (IBAction)share:(id)sender {
+    //TODO: share
+}
 
 @end

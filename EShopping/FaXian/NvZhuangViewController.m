@@ -26,7 +26,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"精品女装";
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:NV_ZHUANG_URL]]];
-
+    
     UIImage *image = [[UIImage imageNamed:@"newBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:image
                                                                              style:UIBarButtonItemStylePlain

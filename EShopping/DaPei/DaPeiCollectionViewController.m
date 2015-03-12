@@ -14,11 +14,13 @@
 #import "DaPeiModel.h"
 #import "Macro.h"
 #import "DaPeiInfoViewController.h"
+#import "MJRefresh.h"
 
 @interface DaPeiCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, WaterfallCollectionViewLayoutDelegate, WebServerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) BOOL isHeaderRefreshing;
 
 @end
 
@@ -36,17 +38,17 @@
     WaterfallCollectionViewLayout *layout = (WaterfallCollectionViewLayout *)self.waterfallView.collectionViewLayout;
     layout.delegate = self;
     
-    WebServer *webServer = [[WebServer alloc] init];
-    webServer.delegate = self;
-    [webServer requestDataWithURL:[URL daPeiCategoryURLWithCid:self.category page:_currentPage]];    
+    [self.waterfallView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.waterfallView addFooterWithTarget:self action:@selector(fooderRefreshing)];
+    [self.waterfallView headerBeginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     if (self.navigationController.isNavigationBarHidden) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
         self.navigationController.hidesBarsOnSwipe = NO;
     }
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +56,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Refresh
+
+- (void)webServerRequestData {
+    WebServer *webServer = [[WebServer alloc] init];
+    webServer.delegate = self;
+    [webServer requestDataWithURL:[URL daPeiCategoryURLWithCid:self.category page:_currentPage]];
+}
+
+- (void)headerRereshing {
+    self.isHeaderRefreshing = YES;
+    self.currentPage = 1;
+    [self webServerRequestData];
+}
+
+- (void)fooderRefreshing {
+    self.isHeaderRefreshing = NO;
+    self.currentPage++;
+    [self webServerRequestData];
+}
+
+- (void)headerFooterEndRefreshing {
+    if (self.waterfallView.headerRefreshing) {
+        [self.waterfallView headerEndRefreshing];
+    }
+    
+    if (self.waterfallView.footerRefreshing) {
+        [self.waterfallView footerEndRefreshing];
+    }
+}
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if (self.isHeaderRefreshing) {
+        [self.dataArray removeAllObjects];
+    }
+    
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"content"]) {
             DaPeiModel *model = [DaPeiModel model];
@@ -65,10 +101,13 @@
         }
     }
     
+    [self headerFooterEndRefreshing];
     [self.waterfallView reloadData];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
+    [self headerFooterEndRefreshing];
+    
     NSLog(@"%@", error);
     //TODO: 网络错误处理
 }
@@ -100,10 +139,8 @@
     DaPeiInfoViewController *viewController = [[DaPeiInfoViewController alloc] init];
     viewController.hidesBottomBarWhenPushed = YES;
     DaPeiModel *model = self.dataArray[indexPath.row];
-    viewController.param = model.param;
-    viewController.loveNumber = model.loveNumber;
+    viewController.model = model;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 
 @end

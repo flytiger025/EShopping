@@ -27,18 +27,30 @@
                     </constraints>
                     <items>
                         <barButtonItem image="left.png" id="6MA-a4-Yts">
-                            <color key="tintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="back:" destination="-1" id="X9l-ek-bQn"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="4XM-D5-nDG"/>
                         <barButtonItem image="right.png" id="KAP-Ug-CsK">
-                            <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="forward:" destination="-1" id="nc7-Vp-1fo"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="T42-Fg-b8l"/>
                         <barButtonItem image="webView_4.png" id="j9D-PE-Ehj">
                             <color key="tintColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="-1" id="hig-DT-gzC"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem image="bottom_share_button_hover.png" id="g9e-c2-k1H">
                             <color key="tintColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="share:" destination="-1" id="CCS-Ud-EMm"/>
+                            </connections>
                         </barButtonItem>
                     </items>
                 </toolbar>

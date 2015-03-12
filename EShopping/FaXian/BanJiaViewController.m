@@ -13,12 +13,14 @@
 #import "URL.h"
 #import "BanJiaModel.h"
 #import "SBWebViewController.h"
+#import "MJRefresh.h"
 
 static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
 
 @interface BanJiaViewController () <WebServerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, assign) BOOL isHeaderRefreshing;
 
 @end
 
@@ -32,6 +34,10 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
 
     [self.tableView registerNib:[UINib nibWithNibName:banJiaCellIdentifier bundle:nil] forCellReuseIdentifier:banJiaCellIdentifier];
     
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.tableView addFooterWithTarget:self action:@selector(fooderRefreshing)];
+    [self.tableView headerBeginRefreshing];
+    
     WebServer *webServer = [[WebServer alloc] init];
     webServer.delegate = self;
     [webServer requestDataWithURL:[URL banJiaURL]];
@@ -42,9 +48,45 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Refresh
+
+- (void)webServerRequestData {
+    WebServer *webServer = [[WebServer alloc] init];
+    webServer.delegate = self;
+    [webServer requestDataWithURL:[URL banJiaURL]];
+}
+
+- (void)headerRereshing {
+    self.isHeaderRefreshing = YES;
+    [self webServerRequestData];
+}
+
+- (void)fooderRefreshing {
+    self.isHeaderRefreshing = NO;
+//    [self webServerRequestData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView footerEndRefreshing];
+    });
+}
+
+- (void)headerFooterEndRefreshing {
+    if (self.tableView.headerRefreshing) {
+        [self.tableView headerEndRefreshing];
+    }
+    
+    if (self.tableView.footerRefreshing) {
+        [self.tableView footerEndRefreshing];
+    }
+}
+
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if (self.isHeaderRefreshing) {
+        [self.dataArray removeAllObjects];
+    }
+
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"list"]) {
             BanJiaModel *model = [BanJiaModel model];
@@ -52,10 +94,14 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
             [self.dataArray addObject:model];
         }
     }
+    
+    [self headerFooterEndRefreshing];
     [self.tableView reloadData];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
+    [self headerFooterEndRefreshing];
+
     //TODO: 半价网络错误处理
     NSLog(@"网络错误");
 }
