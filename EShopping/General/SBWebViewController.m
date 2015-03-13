@@ -63,8 +63,7 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [self changeItemColor];
     [self.navigationController showProgress];
-    [self.navigationController setProgress:0.3 animated:YES];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeProgress:) userInfo:nil repeats:NO];
+    [self setQuarter];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -79,7 +78,7 @@
     [self.navigationController setProgress:0 animated:NO];
 }
 
-#pragma mark -
+#pragma mark - Progress
 
 - (void)changeProgress:(NSTimer *)timer {
     if ([self.navigationController isShowingProgressBar]) {
@@ -89,14 +88,30 @@
     }
 }
 
-- (void)changeItemColor {
-    if ([self.webView canGoBack]) {
-        self.leftItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
-    }
-    if ([self.webView canGoForward]) {
-        self.rightItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
+#pragma mark - HUD
+
+- (void)setQuarter
+{
+    [self.navigationController setProgress:0.25 animated:YES];
+    [self performSelector:@selector(setTwoThirds) withObject:nil afterDelay:1.2];
+}
+
+- (void)setTwoThirds
+{
+    if (self.navigationController.isShowingProgressBar) {
+        [self.navigationController setProgress:0.66 animated:YES];
+        [self performSelector:@selector(setThreeQuarters) withObject:nil afterDelay:0.7];
     }
 }
+
+- (void)setThreeQuarters
+{
+    if (self.navigationController.isShowingProgressBar) {
+        [self.navigationController setProgress:0.75 animated:YES];
+    }
+}
+
+#pragma mark - ToolBar Item
 
 - (IBAction)back:(id)sender {
     [self.webView goBack];
@@ -112,6 +127,15 @@
 
 - (IBAction)share:(id)sender {
     //TODO: share
+}
+
+- (void)changeItemColor {
+    if ([self.webView canGoBack]) {
+        self.leftItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
+    }
+    if ([self.webView canGoForward]) {
+        self.rightItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
+    }
 }
 
 @end
