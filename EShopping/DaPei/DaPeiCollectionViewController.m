@@ -46,8 +46,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     if (self.navigationController.isNavigationBarHidden) {
         [self.navigationController setNavigationBarHidden:NO animated:NO];
-        self.navigationController.hidesBarsOnSwipe = NO;
     }
+
     [super viewWillAppear:animated];
 }
 
@@ -89,6 +89,11 @@
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if ([responseObject[@"content"] isEqual:[NSNull null]]) {
+        [self webServerDidReceiveDataFailure:nil];
+        return;
+    }
+    
     if (self.isHeaderRefreshing) {
         [self.dataArray removeAllObjects];
     }
@@ -107,9 +112,7 @@
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
     [self headerFooterEndRefreshing];
-    
-    NSLog(@"%@", error);
-    //TODO: 网络错误处理
+    [WebServer requestFailureAndShowAlert];
 }
 
 #pragma mark - WaterfallCollectionViewLayoutDelegate

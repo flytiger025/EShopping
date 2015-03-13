@@ -51,6 +51,11 @@
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
     NSMutableArray *viewControllers = [NSMutableArray array];
+    
+    if ([responseObject[@"list"] isEqual:[NSNull null]]) {
+        [self webServerDidReceiveDataFailure:nil];
+        return;
+    }
 
     for (NSDictionary *dic in responseObject[@"list"]) {
         DanPinCategory *category = [DanPinCategory category];
@@ -68,8 +73,9 @@
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
-    //TODO: 网络错误处理
-    NSLog(@"%@", error);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadCategory];
+    });
 }
 
 @end

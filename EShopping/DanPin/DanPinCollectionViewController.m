@@ -23,6 +23,7 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic, assign) BOOL isHeaderRefreshing;
+@property (nonatomic, strong) NSMutableArray *cellHeightArray;
 
 @end
 
@@ -86,6 +87,11 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if ([responseObject[@"data"] isEqual:[NSNull null]]) {
+        [self webServerDidReceiveDataFailure:nil];
+        return;
+    }
+    
     if (self.isHeaderRefreshing) {
         [self.dataArray removeAllObjects];
     }
@@ -104,9 +110,7 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
     [self headerFooterEndRefreshing];
-
-    //TODO: 网络连接错误
-    NSLog(@"网络连接错误");
+    [WebServer requestFailureAndShowAlert];
 }
 
 

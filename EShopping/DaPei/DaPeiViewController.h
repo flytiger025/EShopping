@@ -10,4 +10,8 @@
 
 @interface DaPeiViewController : UIViewController
 
+@property (nonatomic, assign) BOOL firstLanuchFinished;
+
+- (void)loadCategory;
+
 @end

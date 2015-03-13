@@ -45,6 +45,8 @@ PODS:
     - libwebp/core
   - libwebp/webp (0.4.2)
   - M13ProgressSuite (1.2.7)
+  - NZAlertView (0.0.13):
+    - UIImage-Helpers
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage-ProgressView (0.4.0):
@@ -53,6 +55,7 @@ PODS:
   - SDWebImage/WebP (3.7.1):
     - libwebp
     - SDWebImage/Core
+  - UIImage-Helpers (0.0.3)
   - UIImageView+SDWebImage_M13ProgressSuite (0.1.1):
     - M13ProgressSuite
     - SDWebImage/WebP
@@ -60,6 +63,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.1)
   - M13ProgressSuite (~> 1.2.7)
+  - NZAlertView (~> 0.0.13)
   - SDWebImage (~> 3.7.1)
   - SDWebImage-ProgressView (~> 0.4.0)
   - UIImageView+SDWebImage_M13ProgressSuite (~> 0.1.1)
@@ -68,8 +72,10 @@ SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   libwebp: c471fec5a68b9ab8e0c1cbde275fa20eddaa02fa
   M13ProgressSuite: 931cde7e91d474c04edb4b34517d75ca6d88ccf2
+  NZAlertView: 4c2df4a003ea84f3ff1015e3bab78dbdbcca1c1f
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SDWebImage-ProgressView: 5b094a93013b3f6ae9d622b58055c942c964b678
+  UIImage-Helpers: 176819cd1a4cb5beaee859f5b92470fb04be92af
   UIImageView+SDWebImage_M13ProgressSuite: 7d4628f8484d3e4354d78b712b0300a6b4f81d91
 
 COCOAPODS: 0.35.0

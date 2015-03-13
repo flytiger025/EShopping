@@ -14,7 +14,11 @@
 
 @interface RootViewController ()
 
+@property (nonatomic, weak) UIImageView *lanunchImageView;
+
 @end
+
+static void *DaPeiObserverContext = &DaPeiObserverContext;
 
 @implementation RootViewController
 
@@ -42,7 +46,36 @@
     woDeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *woDeNC = [[UINavigationController alloc] initWithRootViewController:woDeVC];
     
-    self.viewControllers = @[daPeiNC, danPinNC, faXianNC, woDeNC];    
+    self.viewControllers = @[daPeiNC, danPinNC, faXianNC, woDeNC];
+
+    
+    [daPeiVC addObserver:self forKeyPath:@"firstLanuchFinished" options:NSKeyValueObservingOptionNew context:DaPeiObserverContext];
+    
+    [self showLanuchImage];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self finishLaunch];
+    });
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"firstLanuchFinished"];
+}
+
+- (void)showLanuchImage {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"LaunchImage-640x1136" ofType:@"png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+    imageView.frame = self.view.frame;
+    imageView.contentMode = UIViewContentModeScaleToFill;
+    self.lanunchImageView = imageView;
+    [self.view addSubview:imageView];
+}
+
+- (void)finishLaunch {
+    if (self.lanunchImageView) {
+        [self.lanunchImageView removeFromSuperview];
+        self.lanunchImageView = nil;
+    }
 }
 
 
@@ -51,6 +84,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (context == DaPeiObserverContext && [change[NSKeyValueChangeNewKey] boolValue]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self finishLaunch];
+        });
+    }
+}
 
 
 @end

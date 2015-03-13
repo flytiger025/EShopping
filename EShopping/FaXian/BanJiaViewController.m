@@ -28,6 +28,8 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     self.tableView.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.937 alpha:1];
     
     self.dataArray = [NSMutableArray array];
@@ -83,6 +85,11 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
+    if ([responseObject[@"list"] isEqual:[NSNull null]]) {
+        [self webServerDidReceiveDataFailure:nil];
+        return;
+    }
+    
     if (self.isHeaderRefreshing) {
         [self.dataArray removeAllObjects];
     }
@@ -101,9 +108,7 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
     [self headerFooterEndRefreshing];
-
-    //TODO: 半价网络错误处理
-    NSLog(@"网络错误");
+    [WebServer requestFailureAndShowAlert];
 }
 
 

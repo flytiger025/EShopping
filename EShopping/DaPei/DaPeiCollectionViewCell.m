@@ -8,12 +8,6 @@
 
 #import "DaPeiCollectionViewCell.h"
 
-@interface DaPeiCollectionViewCell ()
-{
-    BOOL isloveButtonRed;
-}
-@end
-
 @implementation DaPeiCollectionViewCell
 
 - (void)awakeFromNib {

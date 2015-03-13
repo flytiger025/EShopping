@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DaPeiCollectionViewCell : UICollectionViewCell
+{
+    BOOL isloveButtonRed;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *goodsLabel;

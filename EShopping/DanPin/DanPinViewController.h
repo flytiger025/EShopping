@@ -10,4 +10,6 @@
 
 @interface DanPinViewController : UIViewController
 
+- (void)loadCategory;
+
 @end

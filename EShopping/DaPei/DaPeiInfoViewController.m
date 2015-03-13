@@ -25,7 +25,7 @@ static NSString * const footerViewIdentifier = @"DaPeiInfoTableFooterViewCell";
 static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
 
-@interface DaPeiInfoViewController () <WebServerDelegate>
+@interface DaPeiInfoViewController () <WebServerDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImageView *headerView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -36,6 +36,9 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.navigationItem.title = @"搭配信息";
 
@@ -61,9 +64,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    WebServer *webServer = [[WebServer alloc] init];
-    webServer.delegate = self;
-    [webServer requestDataWithURL:[URL daPeiInfoURLWithParam:self.model.param]];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +85,12 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     [self.navigationController presentViewController:imageViewController animated:YES completion:nil];
 }
 
+- (void)loadData {
+    WebServer *webServer = [[WebServer alloc] init];
+    webServer.delegate = self;
+    [webServer requestDataWithURL:[URL daPeiInfoURLWithParam:self.model.param]];
+}
+
 #pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
@@ -95,6 +102,11 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
             blockSelf.headerView.image = [UIImage imageNamed:@"loading"];
         }
     } ProgressPrimaryColor:[UIColor lightGrayColor] ProgressSecondaryColor:nil Diameter:60];
+    
+    if ([responseObject[@"goods"] isEqual:[NSNull null]]) {
+        [self webServerDidReceiveDataFailure:nil];
+        return;
+    }
     
     @autoreleasepool {
         for (NSDictionary *dic in responseObject[@"goods"]) {
@@ -108,10 +120,22 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
-    //TODO: 网络连接失败
-    NSLog(@"网络连接失败");
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadData];
+    });
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y < 5) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -150,6 +174,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
+        [self.navigationController setNavigationBarHidden:NO];
         DaPeiInfoModel *model = self.dataArray[indexPath.row];
         SBWebViewController *webViewController = [[SBWebViewController alloc] init];
         webViewController.url = [NSURL URLWithString:model.url];

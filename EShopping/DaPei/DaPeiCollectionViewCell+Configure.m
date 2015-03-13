@@ -21,4 +21,5 @@
     self.titleLabel.text = [NSString stringWithFormat:@"%@", daPeiModel.title];
 }
 
+
 @end

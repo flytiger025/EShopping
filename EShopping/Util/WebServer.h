@@ -21,4 +21,6 @@
 
 - (void)requestDataWithURL:(NSURL *)url;
 
++ (void)requestFailureAndShowAlert;
+
 @end
