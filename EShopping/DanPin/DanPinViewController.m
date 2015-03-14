@@ -15,17 +15,11 @@
 
 @interface DanPinViewController () <WebServerDelegate>
 
+@property (nonatomic, weak) UIActivityIndicatorView *activityView;
+
 @end
 
 @implementation DanPinViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationItem.title = @"潮流单品";
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-}
 
 - (instancetype)init
 {
@@ -34,6 +28,16 @@
         [self loadCategory];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"潮流单品";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self.activityView startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +49,23 @@
     WebServer *webServer = [[WebServer alloc] init];
     webServer.delegate = self;
     [webServer requestDataWithURL:[URL danPinURL]];
+}
+
+#pragma mark - ActivityIndicatorView
+
+- (UIActivityIndicatorView *)activityView {
+    if (!_activityView) {
+        UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        view.frame = CGRectMake(self.view.center.x, self.view.center.y - 64, 0, 0);
+        [self.view addSubview:_activityView = view];
+    }
+    return _activityView;
+}
+
+- (void)removeActivityView {
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
 }
 
 #pragma mark - WebServerDelegate
@@ -69,11 +90,13 @@
     
     SBNavTabBarController *navTabBarController = [[SBNavTabBarController alloc] init];
     navTabBarController.viewControllers = viewControllers;
-    [navTabBarController addParentController:self];    
+    [navTabBarController addParentController:self];
+    
+    [self removeActivityView];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadCategory];
     });
 }

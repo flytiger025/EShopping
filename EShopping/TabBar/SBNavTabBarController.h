@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class SBNavTabBarController;
+
 @interface SBNavTabBarController : UIViewController
 
 @property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, assign) NSInteger currentIndex;
 
 - (void)addParentController:(UIViewController *)viewController;
 

@@ -29,6 +29,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
 
 @property (nonatomic, strong) UIImageView *headerView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, weak) UIActivityIndicatorView *activityView;
 
 @end
 
@@ -65,12 +66,33 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self loadData];
+    [self.activityView startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - ActivityIndicatorView
+
+- (UIActivityIndicatorView *)activityView {
+    if (!_activityView) {
+        UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        view.frame = CGRectMake(self.view.center.x, self.view.center.y - 64, 0, 0);
+        [self.view addSubview:_activityView = view];
+    }
+    return _activityView;
+}
+
+- (void)removeActivityView {
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
+}
+
+
+#pragma mark - Action
 
 - (void)backItem:(UIBarButtonItem *)item {
     [self.navigationController popViewControllerAnimated:YES];
@@ -116,6 +138,7 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
         }
     }
     
+    [self removeActivityView];
     [self.tableView reloadData];
 }
 

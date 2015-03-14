@@ -80,16 +80,6 @@
 
 #pragma mark - Progress
 
-- (void)changeProgress:(NSTimer *)timer {
-    if ([self.navigationController isShowingProgressBar]) {
-        [self.navigationController setProgress:0.8 animated:YES];
-    } else {
-        [timer invalidate];
-    }
-}
-
-#pragma mark - HUD
-
 - (void)setQuarter
 {
     [self.navigationController setProgress:0.25 animated:YES];

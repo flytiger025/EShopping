@@ -82,7 +82,7 @@
     // Dispose of any resources that can be recreated.
     if (self.isViewLoaded) {
         [self deleteWebView];
-        [self.webView reload];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:NV_ZHUANG_URL]]];
     }
 }
 
@@ -109,8 +109,7 @@
     }
     
     [self.navigationController showProgress];
-    [self.navigationController setProgress:0.3 animated:YES];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(changeProgress:) userInfo:nil repeats:NO];
+    [self setQuarter];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -123,14 +122,28 @@
     [self.navigationController cancelProgress];
 }
 
-#pragma mark - 
+#pragma mark - Progress
 
-- (void)changeProgress:(NSTimer *)timer {
-    if ([self.navigationController isShowingProgressBar]) {
-        [self.navigationController setProgress:0.8 animated:YES];
-    } else {
-        [timer invalidate];
+- (void)setQuarter
+{
+    [self.navigationController setProgress:0.25 animated:YES];
+    [self performSelector:@selector(setTwoThirds) withObject:nil afterDelay:1.2];
+}
+
+- (void)setTwoThirds
+{
+    if (self.navigationController.isShowingProgressBar) {
+        [self.navigationController setProgress:0.66 animated:YES];
+        [self performSelector:@selector(setThreeQuarters) withObject:nil afterDelay:0.7];
     }
 }
+
+- (void)setThreeQuarters
+{
+    if (self.navigationController.isShowingProgressBar) {
+        [self.navigationController setProgress:0.75 animated:YES];
+    }
+}
+
 
 @end

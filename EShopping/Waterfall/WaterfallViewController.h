@@ -20,6 +20,8 @@ typedef NS_ENUM(NSUInteger, ViewControllerType) {
 
 @property (nonatomic, copy) NSString *category;
 
+@property (nonatomic, assign) BOOL isLoad;
+
 + (WaterfallViewController *)viewControllerWithType:(ViewControllerType)type;
 - (NSString *)cellIdentifier;
 

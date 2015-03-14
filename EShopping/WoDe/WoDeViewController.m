@@ -80,7 +80,8 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
     
     switch (indexPath.row) {
         case 0: {
-            cell.titleLabel.text = [NSString stringWithFormat:@"清除缓存(%@)", [self imageCacheSize]];
+//            cell.titleLabel.text = [NSString stringWithFormat:@"清除缓存(%@)", [self imageCacheSize]];
+            cell.titleLabel.text = @"清除缓存";
             break;
         }
             
@@ -178,7 +179,7 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 
 - (void)clearCache {
     __weak WoDeViewController *weakSelf = self;
-    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"真的要清除缓存么,\n下次打开会很费流量欸(>﹏<)" leftButtonTitle:nil rightButtonTitle:@"狠下心来清除"];
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"真的要清除缓存么,\n下次打开会很费流量欸(>﹏<)" leftButtonTitle:nil rightButtonTitle:@"狠下心清除"];
     alertView.rightBlock = dispatch_block_create(DISPATCH_BLOCK_ASSIGN_CURRENT, ^{
         [[SDImageCache sharedImageCache] clearDisk];
         [weakSelf.hud show:YES];
@@ -193,7 +194,7 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 }
 
 - (void)unsupported {
-    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"啊哦~" contentText:@"暂时好像不管用诶눈_눈" leftButtonTitle:nil rightButtonTitle:@"╭（╯_╰）╭"];
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~" contentText:@"暂时好像不管用诶눈_눈" leftButtonTitle:nil rightButtonTitle:@"╭（╯_╰）╭"];
     [alertView show];
 }
 
@@ -225,7 +226,6 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 
 - (void)setComplete
 {
-    [self.tableView reloadData];
     [self.hud performAction:M13ProgressViewActionSuccess animated:YES];
     [self performSelector:@selector(reset) withObject:nil afterDelay:0.8];
 }

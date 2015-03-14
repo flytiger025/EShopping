@@ -15,17 +15,11 @@
 
 @interface DaPeiViewController () <WebServerDelegate>
 
+@property (nonatomic, weak) UIActivityIndicatorView *activityView;
+
 @end
 
 @implementation DaPeiViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationItem.title = @"搭配";
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-}
 
 - (instancetype)init
 {
@@ -36,11 +30,45 @@
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"搭配";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self.activityView startAnimating];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)loadCategory {
     WebServer *webServer = [[WebServer alloc] init];
     webServer.delegate = self;
     [webServer requestDataWithURL:[URL daPeiURL]];
 }
+
+#pragma mark - ActivityIndicatorView
+
+- (UIActivityIndicatorView *)activityView {
+    if (!_activityView) {
+        UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        view.frame = CGRectMake(self.view.center.x, self.view.center.y - 64, 0, 0);
+        [self.view addSubview:_activityView = view];
+    }
+    return _activityView;
+}
+
+- (void)removeActivityView {
+    [_activityView stopAnimating];
+    [_activityView removeFromSuperview];
+    _activityView = nil;
+}
+
+#pragma mark - WebServerDelegate
 
 - (void)webServerDidReceiveDataSuccess:(id)responseObject {
     NSMutableArray *viewControllers = [NSMutableArray array];
@@ -62,20 +90,13 @@
     [navTabBarController addParentController:self];
     
     self.firstLanuchFinished = YES;
+    [self removeActivityView];
 }
 
 - (void)webServerDidReceiveDataFailure:(NSError *)error {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadCategory];
     });
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 @end

@@ -41,11 +41,16 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
     WaterfallCollectionViewLayout *layout = (WaterfallCollectionViewLayout *)self.waterfallView.collectionViewLayout;
     layout.delegate = self;
     
+    CGRect frame = self.waterfallView.frame;
+    frame.size.height -= NAV_TAB_BAR_HEIGHT;
+    self.waterfallView.frame = frame;
+    
     [self.waterfallView registerNib:[UINib nibWithNibName:danPinCellIdentifier bundle:nil] forCellWithReuseIdentifier:danPinCellIdentifier];
     
     [self.waterfallView addHeaderWithTarget:self action:@selector(headerRereshing)];
     [self.waterfallView addFooterWithTarget:self action:@selector(fooderRefreshing)];
-    [self.waterfallView headerBeginRefreshing];
+
+    [self webServerRequestData];
 }
 
 - (void)didReceiveMemoryWarning {
