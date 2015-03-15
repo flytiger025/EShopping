@@ -8,6 +8,7 @@
 
 #import "SBWebViewController.h"
 #import "UINavigationController+M13ProgressViewBar.h"
+#import "DXAlertView.h"
 
 @interface SBWebViewController () <UIWebViewDelegate>
 
@@ -117,6 +118,7 @@
 
 - (IBAction)share:(id)sender {
     //TODO: share
+    [self unsupported];
 }
 
 - (void)changeItemColor {
@@ -127,5 +129,14 @@
         self.rightItem.tintColor = [UIColor colorWithWhite:0.2 alpha:1];
     }
 }
+
+- (void)unsupported {
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
+                                                    contentText:@"暂时好像不管用诶눈_눈"
+                                                leftButtonTitle:nil
+                                               rightButtonTitle:@"╭（╯_╰）╭"];
+    [alertView show];
+}
+
 
 @end

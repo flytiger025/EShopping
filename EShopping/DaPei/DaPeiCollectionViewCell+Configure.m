@@ -9,13 +9,16 @@
 #import "DaPeiCollectionViewCell+Configure.h"
 #import "DaPeiModel.h"
 #import "UIImageView+WebCache.h"
+#import "UIImageView+SDWebImage_M13ProgressSuite.h"
 
 
 
 @implementation DaPeiCollectionViewCell (Configure)
 
 - (void)configureCellWithDaPeiModel:(DaPeiModel *)daPeiModel {
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:daPeiModel.imageURL] placeholderImage:nil options:SDWebImageRetryFailed];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:daPeiModel.imageURL]
+                      placeholderImage:nil
+                               options:SDWebImageRetryFailed];
     self.goodsLabel.text = [NSString stringWithFormat:@"%@", daPeiModel.goodsNumber];
     self.loveLabel.text = [NSString stringWithFormat:@"%@", daPeiModel.loveNumber];
     self.titleLabel.text = [NSString stringWithFormat:@"%@", daPeiModel.title];

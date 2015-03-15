@@ -31,7 +31,9 @@
 }
 
 + (void)requestFailureAndShowAlert {
-    NZAlertView *alertView = [[NZAlertView alloc] initWithStyle:NZAlertStyleError title:@"网络连接失败" message:@"请检查您的网络连接,并重新尝试"];
+    NZAlertView *alertView = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                          title:@"网络连接失败"
+                                                        message:@"请检查您的网络连接,并重新尝试"];
     [alertView show];
 }
 

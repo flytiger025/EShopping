@@ -27,29 +27,40 @@ static void *DaPeiObserverContext = &DaPeiObserverContext;
     
     // Do any additional setup after loading the view.
     DaPeiViewController *daPeiVC = [[DaPeiViewController alloc] init];
-    daPeiVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"tabItem0"] selectedImage:[[UIImage imageNamed:@"tabItem_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    daPeiVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                       image:[UIImage imageNamed:@"tabItem0"]
+                                               selectedImage:[[UIImage imageNamed:@"tabItem_0"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     daPeiVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *daPeiNC = [[UINavigationController alloc] initWithRootViewController:daPeiVC];
     
     DanPinViewController *danPinVC = [[DanPinViewController alloc] init];
-    danPinVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"tabItem1"] selectedImage:[[UIImage imageNamed:@"tabItem_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    danPinVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                        image:[UIImage imageNamed:@"tabItem1"]
+                                                selectedImage:[[UIImage imageNamed:@"tabItem_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     danPinVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *danPinNC = [[UINavigationController alloc] initWithRootViewController:danPinVC];
     
     FaXianViewController *faXianVC = [[FaXianViewController alloc] init];
-    faXianVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"tabItem2"] selectedImage:[[UIImage imageNamed:@"tabItem_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    faXianVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                        image:[UIImage imageNamed:@"tabItem2"]
+                                                selectedImage:[[UIImage imageNamed:@"tabItem_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     faXianVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *faXianNC = [[UINavigationController alloc] initWithRootViewController:faXianVC];
 
     WoDeViewController *woDeVC = [[WoDeViewController alloc] init];
-    woDeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"tabItem3"] selectedImage:[[UIImage imageNamed:@"tabItem_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    woDeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil
+                                                      image:[UIImage imageNamed:@"tabItem3"]
+                                              selectedImage:[[UIImage imageNamed:@"tabItem_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     woDeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     UINavigationController *woDeNC = [[UINavigationController alloc] initWithRootViewController:woDeVC];
     
     self.viewControllers = @[daPeiNC, danPinNC, faXianNC, woDeNC];
 
     
-    [daPeiVC addObserver:self forKeyPath:@"firstLanuchFinished" options:NSKeyValueObservingOptionNew context:DaPeiObserverContext];
+    [daPeiVC addObserver:self
+              forKeyPath:@"firstLanuchFinished"
+                 options:NSKeyValueObservingOptionNew
+                 context:DaPeiObserverContext];
     
     [self showLanuchImage];
     

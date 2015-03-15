@@ -109,7 +109,10 @@
     }
     
     [UIView animateWithDuration:0.2 animations:^{
-        _line.frame = CGRectMake(button.frame.origin.x + 2.0f, _line.frame.origin.y, [_itemsWidth[_currentIndex] floatValue] - 4.0f, _line.frame.size.height);
+        _line.frame = CGRectMake(button.frame.origin.x + 2.0f,
+                                 _line.frame.origin.y,
+                                 [_itemsWidth[_currentIndex] floatValue] - 4.0f,
+                                 _line.frame.size.height);
     }];
 }
 

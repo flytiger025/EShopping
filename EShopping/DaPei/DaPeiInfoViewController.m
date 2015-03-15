@@ -119,11 +119,18 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
     NSString *imageURL = responseObject[@"big_pic"];
     
     __weak DaPeiInfoViewController *blockSelf = self;
-    [self.headerView setImageUsingProgressViewRingWithURL:[NSURL URLWithString:imageURL] placeholderImage:nil options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (error) {
-            blockSelf.headerView.image = [UIImage imageNamed:@"loading"];
-        }
-    } ProgressPrimaryColor:[UIColor lightGrayColor] ProgressSecondaryColor:nil Diameter:60];
+    [self.headerView setImageUsingProgressViewRingWithURL:[NSURL URLWithString:imageURL]
+                                         placeholderImage:nil
+                                                  options:SDWebImageRetryFailed
+                                                 progress:nil
+                                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                                    if (error) {
+                                                        blockSelf.headerView.image = [UIImage imageNamed:@"loading"];
+                                                    }
+                                                }
+                                     ProgressPrimaryColor:[UIColor lightGrayColor]
+                                   ProgressSecondaryColor:nil
+                                                 Diameter:60];
     
     if ([responseObject[@"goods"] isEqual:[NSNull null]]) {
         [self webServerDidReceiveDataFailure:nil];

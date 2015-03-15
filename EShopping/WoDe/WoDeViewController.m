@@ -179,7 +179,10 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 
 - (void)clearCache {
     __weak WoDeViewController *weakSelf = self;
-    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"提示" contentText:@"真的要清除缓存么,\n下次打开会很费流量欸(>﹏<)" leftButtonTitle:nil rightButtonTitle:@"狠下心清除"];
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"提示"
+                                                    contentText:@"真的要清除缓存么,\n下次打开会很费流量欸(>﹏<)"
+                                                leftButtonTitle:nil
+                                               rightButtonTitle:@"狠下心清除"];
     alertView.rightBlock = dispatch_block_create(DISPATCH_BLOCK_ASSIGN_CURRENT, ^{
         [[SDImageCache sharedImageCache] clearDisk];
         [weakSelf.hud show:YES];
@@ -189,12 +192,18 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 }
 
 - (void)aboutUs {
-    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~" contentText:@"Q群: 391123593" leftButtonTitle:nil rightButtonTitle:@"好的哦,亲~ `(*∩_∩*)′ "];
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
+                                                    contentText:@"Q群: 391123593"
+                                                leftButtonTitle:nil
+                                               rightButtonTitle:@"好的哦,亲~ `(*∩_∩*)′ "];
     [alertView show];
 }
 
 - (void)unsupported {
-    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~" contentText:@"暂时好像不管用诶눈_눈" leftButtonTitle:nil rightButtonTitle:@"╭（╯_╰）╭"];
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
+                                                    contentText:@"暂时好像不管用诶눈_눈"
+                                                leftButtonTitle:nil
+                                               rightButtonTitle:@"╭（╯_╰）╭"];
     [alertView show];
 }
 

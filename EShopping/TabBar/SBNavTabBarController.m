@@ -42,8 +42,8 @@
     _mainView.delegate = self;
     _mainView.pagingEnabled = YES;
     _mainView.directionalLockEnabled = YES;
-    _mainView.showsHorizontalScrollIndicator = NO;
     _mainView.showsVerticalScrollIndicator = NO;
+    _mainView.showsHorizontalScrollIndicator = NO;
     _mainView.contentSize = CGSizeMake(SCREEN_WIDTH *_viewControllers.count, 0);
         
     [self.view addSubview:_navTabBar];

@@ -15,7 +15,11 @@
 
 - (void)configureCellWithModel:(DanPinModel *)model {
     __weak DanPinCollectionViewCell *weakSelf = self;
-    [self.picView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:nil options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.picView sd_setImageWithURL:[NSURL URLWithString:model.img]
+                    placeholderImage:nil
+                             options:SDWebImageRetryFailed
+                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL)
+    {
         weakSelf.priceLabel.text = [NSString stringWithFormat:@"￥%@", model.price];
     }];
 }

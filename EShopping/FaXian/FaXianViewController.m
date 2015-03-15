@@ -38,7 +38,11 @@
     _titleView.rightButtonTitle = @"半价";
     self.navigationItem.titleView = self.titleView;
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"threeBars"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemAction:)];
+    UIImage *image = [[UIImage imageNamed:@"threeBars"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:image
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(rightItemAction:)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
     JKJViewController *jkjVC = [[JKJViewController alloc] init];

@@ -13,7 +13,9 @@
 @implementation DaPeiInfoTableViewCell (Configure)
 
 - (void)configuredCellWithModel:(DaPeiInfoModel *)model {
-    [self.picView sd_setImageWithURL:[NSURL URLWithString:model.smallImageURL] placeholderImage:nil options:SDWebImageRetryFailed];
+    [self.picView sd_setImageWithURL:[NSURL URLWithString:model.smallImageURL]
+                    placeholderImage:nil
+                             options:SDWebImageRetryFailed];
     self.titleLabel.text = model.title;
     self.priceLabel.text = [NSString stringWithFormat:@"￥%.f", [model.nowPrice floatValue]];
 }
