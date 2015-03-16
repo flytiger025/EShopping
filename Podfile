@@ -9,3 +9,7 @@ pod 'M13ProgressSuite', '~> 1.2.7'
 pod 'UIImageView+SDWebImage_M13ProgressSuite', '~> 0.1.1'
 
 pod 'NZAlertView', '~> 0.0.13'
+
+pod 'UMengAnalytics', '~> 3.4.6'
+
+pod 'MBProgressHUD', '~> 0.9.1'

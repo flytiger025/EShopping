@@ -51,9 +51,8 @@
 
 #pragma mark - 
 
-+ (NSURL *)faXianURLWithNumID:(NSString *)numID {
-    NSString *urlString = [NSString stringWithFormat:@"http://cloud.yijia.com/goto/item.php?app_channel=appstore&id=%@&sche=aizhuangban", numID];
-    return [NSURL URLWithString:urlString];
++ (NSString *)faxianURLWithNumID:(NSString *)numID {
+    return [NSString stringWithFormat:@"http://cloud.yijia.com/goto/item.php?id=%@", numID];
 }
 
 @end

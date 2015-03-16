@@ -16,8 +16,6 @@
 @end
 
 
-#define kDefaultHeaderFrame CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
-
 static CGFloat kParallaxDeltaFactor = 0.5f;
 static CGFloat kLabelPaddingDist = 8.0f;
 
@@ -73,7 +71,7 @@ static CGFloat kLabelPaddingDist = 8.0f;
         self.clipsToBounds = YES;
     } else {
         CGFloat delta = 0.0f;
-        CGRect rect = kDefaultHeaderFrame;
+        CGRect rect = self.frame;
         delta = fabsf(offset.y);
         rect.origin.y -= delta;
         rect.size.height += delta;

@@ -145,7 +145,9 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DanPinModel *model = self.dataArray[indexPath.row];
     SBWebViewController *webViewController = [[SBWebViewController alloc] init];
-    webViewController.url = [NSURL URLWithString:model.url];
+    webViewController.url = model.url;
+    webViewController.imageURL = model.img;
+    webViewController.desc = @"e购-淘最适合你的单品";
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }

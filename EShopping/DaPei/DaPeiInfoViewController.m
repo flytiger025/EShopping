@@ -207,7 +207,9 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
         [self.navigationController setNavigationBarHidden:NO];
         DaPeiInfoModel *model = self.dataArray[indexPath.row];
         SBWebViewController *webViewController = [[SBWebViewController alloc] init];
-        webViewController.url = [NSURL URLWithString:model.url];
+        webViewController.url = model.url;
+        webViewController.desc = model.title;
+        webViewController.imageURL = model.smallImageURL;
         webViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:webViewController animated:YES];
     }

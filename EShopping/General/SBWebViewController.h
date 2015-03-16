@@ -10,6 +10,8 @@
 
 @interface SBWebViewController : UIViewController
 
-@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *desc;
 
 @end

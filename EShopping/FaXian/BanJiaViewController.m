@@ -136,11 +136,11 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
     return 200;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BanJiaModel *model = self.dataArray[indexPath.row];
     SBWebViewController *webViewController = [[SBWebViewController alloc] init];
-    webViewController.url = [URL faXianURLWithNumID:model.numID];
+    webViewController.url = [URL faxianURLWithNumID:model.numID];
+    webViewController.desc = model.title;
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }

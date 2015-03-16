@@ -139,7 +139,8 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     JKJModel *model = self.dataArray[indexPath.row];
     SBWebViewController *webViewController = [[SBWebViewController alloc] init];
-    webViewController.url = [URL faXianURLWithNumID:model.numID];
+    webViewController.url = [URL faxianURLWithNumID:model.numID];
+    webViewController.desc = model.title;
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }

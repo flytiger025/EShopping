@@ -146,8 +146,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DaPeiInfoViewController *viewController = [[DaPeiInfoViewController alloc] init];
     viewController.hidesBottomBarWhenPushed = YES;
-    DaPeiModel *model = self.dataArray[indexPath.row];
-    viewController.model = model;
+    viewController.model = self.dataArray[indexPath.row];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

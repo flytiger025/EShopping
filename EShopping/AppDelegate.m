@@ -9,6 +9,12 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "WaterfallViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import "WeiboSDK.h"
+#import "MobClick.h"
+#import "WXApi.h"
+#import "Macro.h"
+
 
 @interface AppDelegate ()
 
@@ -16,8 +22,43 @@
 
 @implementation AppDelegate
 
+- (void)initializePlat {
+    /**
+     连接新浪微博开放平台应用以使用相关功能，此应用需要引用SinaWeiboConnection.framework
+     http://open.weibo.com上注册新浪微博开放平台应用，并将相关信息填写到以下字段
+     **/
+    [ShareSDK connectSinaWeiboWithAppKey:WB_KEY
+                               appSecret:WB_SECRET
+                             redirectUri:WB_REDIRECTURI];
+    
+    [ShareSDK connectSinaWeiboWithAppKey:WB_KEY
+                               appSecret:WB_SECRET
+                             redirectUri:WB_REDIRECTURI
+                             weiboSDKCls:[WeiboSDK class]];
+    
+    //添加微信应用 注册网址 http://open.weixin.qq.com
+    [ShareSDK connectWeChatWithAppId:WX_KEY
+                           appSecret:WX_SECRET
+                           wechatCls:[WXApi class]];
+    
+    //连接拷贝
+    [ShareSDK connectCopy];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //shareSDK
+    [ShareSDK registerApp:SHARESDK_KEY];
+    [self initializePlat];
+    
+    //友盟
+    [MobClick startWithAppkey:UMENG_KEY reportPolicy:BATCH channelId:UMENG_CHANNEL_ID];
+    [MobClick setCrashReportEnabled:YES]; // 如果不需要捕捉异常，注释掉此行
+    
+    //监听用户信息变更(optional)
+    [ShareSDK addNotificationWithName:SSN_USER_INFO_UPDATE
+                               target:self
+                               action:@selector(userInfoUpdateHandler:)];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -49,5 +90,77 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - 如果使用SSO（可以简单理解成客户端授权），以下方法是必要的
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+//iOS 4.2+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
+}
+
+
+- (void)userInfoUpdateHandler:(NSNotification *)notif
+{
+    NSMutableArray *authList = [NSMutableArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/authListCache.plist",NSTemporaryDirectory()]];
+    if (authList == nil)
+    {
+        authList = [NSMutableArray array];
+    }
+    
+    NSString *platName = nil;
+    NSInteger plat = [[[notif userInfo] objectForKey:SSK_PLAT] integerValue];
+    switch (plat)
+    {
+        case ShareTypeSinaWeibo:
+            platName = NSLocalizedString(@"TEXT_SINA_WEIBO", @"新浪微博");
+            break;
+        default:
+            platName = NSLocalizedString(@"TEXT_UNKNOWN", @"未知");
+    }
+    
+    id<ISSPlatformUser> userInfo = [[notif userInfo] objectForKey:SSK_USER_INFO];
+    BOOL hasExists = NO;
+    for (int i = 0; i < [authList count]; i++)
+    {
+        NSMutableDictionary *item = [authList objectAtIndex:i];
+        ShareType type = (ShareType)[[item objectForKey:@"type"] integerValue];
+        if (type == plat)
+        {
+            [item setObject:[userInfo nickname] forKey:@"username"];
+            hasExists = YES;
+            break;
+        }
+    }
+    
+    if (!hasExists)
+    {
+        NSDictionary *newItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                 platName,
+                                 @"title",
+                                 [NSNumber numberWithInteger:plat],
+                                 @"type",
+                                 [userInfo nickname],
+                                 @"username",
+                                 nil];
+        [authList addObject:newItem];
+    }
+    
+    [authList writeToFile:[NSString stringWithFormat:@"%@/authListCache.plist",NSTemporaryDirectory()] atomically:YES];
+}
+
 
 @end

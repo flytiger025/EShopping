@@ -131,12 +131,12 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
         }
             
         case 1: { //版本升级
-            [self unsupported];
+            [self update];
             break;
         }
             
         case 2: { //应用评价
-            [self unsupported];
+            [self evaluate];
             break;
         }
             
@@ -191,19 +191,27 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
     [alertView show];
 }
 
-- (void)aboutUs {
+- (void)update {
     DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
-                                                    contentText:@"Q群: 391123593"
+                                                    contentText:@"好像已经是最新版本了诶눈_눈"
                                                 leftButtonTitle:nil
-                                               rightButtonTitle:@"好的哦,亲~ `(*∩_∩*)′ "];
+                                               rightButtonTitle:@"(=^_^=)"];
     [alertView show];
 }
 
-- (void)unsupported {
+- (void)evaluate {
     DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
                                                     contentText:@"暂时好像不管用诶눈_눈"
                                                 leftButtonTitle:nil
                                                rightButtonTitle:@"╭（╯_╰）╭"];
+    [alertView show];
+}
+
+- (void)aboutUs {
+    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
+                                                    contentText:@"客服QQ:391123593"
+                                                leftButtonTitle:nil
+                                               rightButtonTitle:@"好的哦,亲~ `(*∩_∩*)′ "];
     [alertView show];
 }
 
