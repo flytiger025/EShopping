@@ -74,9 +74,9 @@
     NSMutableArray *viewControllers = [NSMutableArray array];
     SBNavTabBarController *navTabBarController = [[SBNavTabBarController alloc] init];
 
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject) {
-            DaPeiCategory *category = [DaPeiCategory category];
+    for (NSDictionary *dic in responseObject) {
+        @autoreleasepool {
+            DaPeiCategory *category = [[DaPeiCategory alloc] init];
             [category setValuesForKeysWithDictionary:dic];
             
             WaterfallViewController *viewController = [WaterfallViewController viewControllerWithType:ViewControllerTypeDaPei];

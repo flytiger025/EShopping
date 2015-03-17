@@ -17,6 +17,4 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
 
-+ (DaPeiInfoModel *)infoModel;
-
 @end

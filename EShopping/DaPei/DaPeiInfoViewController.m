@@ -137,9 +137,9 @@ static NSString * const headerViewIdentifier = @"DaPeiInfoTableHeaderViewCell";
         return;
     }
     
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject[@"goods"]) {
-            DaPeiInfoModel *model = [DaPeiInfoModel infoModel];
+    for (NSDictionary *dic in responseObject[@"goods"]) {
+        @autoreleasepool {
+            DaPeiInfoModel *model = [[DaPeiInfoModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }

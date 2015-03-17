@@ -13,13 +13,14 @@
 #import <ShareSDK/ShareSDK.h>
 #import "MBProgressHUD.h"
 
-@interface SBWebViewController () <UIWebViewDelegate, MBProgressHUDDelegate>
+@interface SBWebViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sharedItem;
+
 
 @end
 
@@ -44,6 +45,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)dealloc {
+    _webView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,9 +136,7 @@
 - (IBAction)refresh:(id)sender {
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        // Do something...
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
     
@@ -188,12 +191,11 @@
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+//    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     
     // Set custom view mode
     HUD.mode = MBProgressHUDModeCustomView;
     
-    HUD.delegate = self;
     HUD.labelText = @"成功";
     
     [HUD show:YES];
@@ -205,12 +207,11 @@
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+//    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     
     // Set custom view mode
     HUD.mode = MBProgressHUDModeCustomView;
     
-    HUD.delegate = self;
     HUD.labelText = @"失败";
     
     [HUD show:YES];

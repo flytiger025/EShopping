@@ -10,8 +10,4 @@
 
 @implementation DanPinModel
 
-+ (DanPinModel *)model {
-    return [[DanPinModel alloc] init];
-}
-
 @end

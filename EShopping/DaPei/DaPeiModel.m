@@ -10,10 +10,6 @@
 
 @implementation DaPeiModel
 
-+ (DaPeiModel *)model {
-    return [[DaPeiModel alloc] init];
-}
-
 - (NSDictionary *)undefineKeyMap {
     return @{@"goods_num": @"goodsNumber",
              @"love_num": @"loveNumber",

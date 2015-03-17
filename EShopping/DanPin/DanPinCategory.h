@@ -14,6 +14,4 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) BOOL isDefault;
 
-+ (DanPinCategory *)category;
-
 @end

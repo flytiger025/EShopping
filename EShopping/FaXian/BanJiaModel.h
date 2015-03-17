@@ -23,6 +23,4 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) NSNumber *loveNumber;
 
-+ (BanJiaModel *)model;
-
 @end

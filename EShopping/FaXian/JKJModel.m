@@ -10,10 +10,6 @@
 
 @implementation JKJModel
 
-+ (JKJModel *)model {
-    return [[JKJModel alloc] init];
-}
-
 - (NSDictionary *)jkj_undefinedKeyMap {
     return @{@"is_buy_sale": @"isBuySale",
              @"ling_value": @"lingValue",

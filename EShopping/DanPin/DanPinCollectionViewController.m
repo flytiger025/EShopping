@@ -58,6 +58,13 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    self.waterfallView.dataSource = nil;
+    self.waterfallView.delegate = nil;
+    WaterfallCollectionViewLayout *layout = (WaterfallCollectionViewLayout *)self.waterfallView.collectionViewLayout;
+    layout.delegate = nil;
+}
+
 #pragma mark - Refresh
 
 - (void)webServerRequestData {
@@ -101,9 +108,9 @@ static NSString * const danPinCellIdentifier = @"DanPinCollectionViewCell";
         [self.dataArray removeAllObjects];
     }
 
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject[@"data"]) {
-            DanPinModel *model = [DanPinModel model];
+    for (NSDictionary *dic in responseObject[@"data"]) {
+        @autoreleasepool {
+            DanPinModel *model = [[DanPinModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }

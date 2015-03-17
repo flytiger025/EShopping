@@ -18,6 +18,4 @@
 @property (nonatomic, copy) NSString *imageURL;
 @property (nonatomic, copy) NSString *title;
 
-+ (DaPeiModel *)model;
-
 @end

@@ -94,9 +94,9 @@ static NSString * const banJiaCellIdentifier = @"BanJiaTableViewCell";
         [self.dataArray removeAllObjects];
     }
 
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject[@"list"]) {
-            BanJiaModel *model = [BanJiaModel model];
+    for (NSDictionary *dic in responseObject[@"list"]) {
+        @autoreleasepool {
+            BanJiaModel *model = [[BanJiaModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }

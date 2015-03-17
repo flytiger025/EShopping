@@ -28,8 +28,4 @@
     [self setValue:value forKey:[self undefinedKeyMap][key]];
 }
 
-+ (BanJiaModel *)model {
-    return [[BanJiaModel alloc] init];
-}
-
 @end

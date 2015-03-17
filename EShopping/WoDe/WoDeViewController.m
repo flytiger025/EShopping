@@ -209,7 +209,7 @@ static NSString * const WDCellIdentifier = @"WoDeTableViewCell";
 
 - (void)aboutUs {
     DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"喵呜~"
-                                                    contentText:@"客服QQ:391123593"
+                                                    contentText:@"客服QQ:214256311"
                                                 leftButtonTitle:nil
                                                rightButtonTitle:@"好的哦,亲~ `(*∩_∩*)′ "];
     [alertView show];

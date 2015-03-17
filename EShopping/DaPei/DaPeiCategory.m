@@ -10,9 +10,4 @@
 
 @implementation DaPeiCategory
 
-+ (DaPeiCategory *)category {
-    return [[DaPeiCategory alloc] init];
-}
-
-
 @end

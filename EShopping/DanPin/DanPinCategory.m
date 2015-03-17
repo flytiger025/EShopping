@@ -10,10 +10,6 @@
 
 @implementation DanPinCategory
 
-+ (DanPinCategory *)category {
-    return [[DanPinCategory alloc] init];
-}
-
 - (NSDictionary *)undefineKeyMap {
     return @{@"catId": @"ID",
              @"catName": @"name",

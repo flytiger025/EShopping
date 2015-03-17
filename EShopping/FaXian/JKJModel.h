@@ -15,6 +15,4 @@
 @property (nonatomic, copy) NSString *qiangPai;
 @property (nonatomic, strong) NSNumber *hateNumber;
 
-+ (JKJModel *)model;
-
 @end

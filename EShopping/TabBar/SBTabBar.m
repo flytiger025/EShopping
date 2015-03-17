@@ -41,9 +41,11 @@
 }
 
 - (void)showLineWithButtonWidth:(CGFloat)width {
-    self.line = [[UIView alloc] initWithFrame:CGRectMake(2.0, NAV_TAB_BAR_HEIGHT - 2, width - 4, 2)];
-    _line.backgroundColor = SBColor;
-    [_navigateionTabBar addSubview:_line];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.line = [[UIView alloc] initWithFrame:CGRectMake(2.0, NAV_TAB_BAR_HEIGHT - 2, width - 4, 2)];
+        _line.backgroundColor = SBColor;
+        [_navigateionTabBar addSubview:_line];
+    });
 }
 
 - (CGFloat )contentWidthAndAddNavTabBarItemsWithButtonWidth:(NSArray *)widths {

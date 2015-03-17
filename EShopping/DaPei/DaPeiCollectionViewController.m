@@ -61,6 +61,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    WaterfallCollectionViewLayout *layout = (WaterfallCollectionViewLayout *)self.waterfallView.collectionViewLayout;
+    layout.delegate = nil;
+    self.waterfallView.dataSource = nil;
+    self.waterfallView.delegate = nil;
+}
+
 #pragma mark - Refresh
 
 - (void)webServerRequestData {
@@ -103,9 +110,9 @@
         [self.dataArray removeAllObjects];
     }
     
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject[@"content"]) {
-            DaPeiModel *model = [DaPeiModel model];
+    for (NSDictionary *dic in responseObject[@"content"]) {
+        @autoreleasepool {
+            DaPeiModel *model = [[DaPeiModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }

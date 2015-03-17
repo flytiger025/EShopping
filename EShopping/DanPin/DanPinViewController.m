@@ -79,13 +79,15 @@
     }
 
     for (NSDictionary *dic in responseObject[@"list"]) {
-        DanPinCategory *category = [DanPinCategory category];
-        [category setValuesForKeysWithDictionary:dic];
-        
-        DanPinCollectionViewController *viewController = [[DanPinCollectionViewController alloc] init];
-        viewController.title = category.name;
-        viewController.category = category.ID;
-        [viewControllers addObject:viewController];
+        @autoreleasepool {
+            DanPinCategory *category = [[DanPinCategory alloc] init];
+            [category setValuesForKeysWithDictionary:dic];
+            
+            DanPinCollectionViewController *viewController = [[DanPinCollectionViewController alloc] init];
+            viewController.title = category.name;
+            viewController.category = category.ID;
+            [viewControllers addObject:viewController];
+        }
     }
     
     SBNavTabBarController *navTabBarController = [[SBNavTabBarController alloc] init];

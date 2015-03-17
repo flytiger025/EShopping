@@ -53,10 +53,13 @@
         UIViewController *viewController = (UIViewController *)_viewControllers[idx];
         viewController.view.frame = CGRectMake(idx * SCREEN_WIDTH, 0, SCREEN_WIDTH, _mainView.frame.size.height);
         [self addChildViewController:viewController];
-        if (idx == 0 || idx == 1) {
-            [_mainView addSubview:viewController.view];
-        }
+        [_mainView addSubview:viewController.view];
     }];
+}
+
+- (void)dealloc {
+    _navTabBar.delegate = nil;
+    _mainView.delegate = nil;
 }
 
 - (void)addParentController:(UIViewController *)viewController {
@@ -71,42 +74,15 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     _currentIndex = scrollView.contentOffset.x / SCREEN_WIDTH;
     _navTabBar.currentIndex = _currentIndex;
-    [self loadRightAndLeftView];
 }
 
 - (void)tabBar:(SBTabBar *)tabBar didSelectItemWithIndex:(NSInteger)index {
     _currentIndex = index;
-    
-    WaterfallViewController *currentVC = (WaterfallViewController *)_viewControllers[index];
-    if (!currentVC.isLoad) {
-        [_mainView addSubview:currentVC.view];
-        currentVC.isLoad = YES;
-    }
-    
     [_mainView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:NO];
-    [self loadRightAndLeftView];
 }
 
 
 #pragma mark - 
-
-- (void)loadRightAndLeftView {
-    if (_currentIndex + 1 < _viewControllers.count) {
-        WaterfallViewController *rightVC = (WaterfallViewController *)_viewControllers[_currentIndex + 1];
-        if (!rightVC.isLoad) {
-            [_mainView addSubview:rightVC.view];
-            rightVC.isLoad = YES;
-        }
-    }
-    
-    if (_currentIndex - 1 >= 0) {
-        WaterfallViewController *leftVC = (WaterfallViewController *)_viewControllers[_currentIndex - 1];
-        if (!leftVC.isLoad) {
-            [_mainView addSubview:leftVC.view];
-            leftVC.isLoad = YES;
-        }
-    }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

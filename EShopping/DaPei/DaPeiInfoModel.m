@@ -10,10 +10,6 @@
 
 @implementation DaPeiInfoModel
 
-+ (DaPeiInfoModel *)infoModel {
-    return [[DaPeiInfoModel alloc] init];
-}
-
 - (NSDictionary *)undefineKeyMap {
     return @{@"now_price": @"nowPrice",
              @"num_iid": @"ID",

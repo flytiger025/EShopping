@@ -51,6 +51,13 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    self.waterfallView.dataSource = nil;
+    self.waterfallView.delegate = nil;
+    WaterfallCollectionViewLayout *layout = (WaterfallCollectionViewLayout *)self.waterfallView.collectionViewLayout;
+    layout.delegate = nil;
+}
+
 #pragma mark - Refresh
 
 - (void)webServerRequestData {
@@ -96,9 +103,9 @@ static NSString * const JKJCellIdentifier = @"JKJCollectionViewCell";
         [self.dataArray removeAllObjects];
     }
 
-    @autoreleasepool {
-        for (NSDictionary *dic in responseObject[@"list"]) {
-            JKJModel *model = [JKJModel model];
+    for (NSDictionary *dic in responseObject[@"list"]) {
+        @autoreleasepool {
+            JKJModel *model = [[JKJModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.dataArray addObject:model];
         }

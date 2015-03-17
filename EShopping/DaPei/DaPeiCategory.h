@@ -13,6 +13,4 @@
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *title;
 
-+ (DaPeiCategory *)category;
-
 @end

@@ -15,6 +15,4 @@
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *url;
 
-+ (DanPinModel *)model;
-
 @end

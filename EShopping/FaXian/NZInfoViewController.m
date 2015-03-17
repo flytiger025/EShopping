@@ -71,6 +71,7 @@
 }
 
 - (void)dealloc {
+    _webView.delegate = nil;
     [self deleteWebView];
 }
 
@@ -82,6 +83,9 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if ([request.URL.absoluteString hasPrefix:@"tmall"] || [request.URL.absoluteString hasPrefix:@"taobao"]) {
+        return NO;
+    }
     return YES;
 }
 
