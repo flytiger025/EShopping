@@ -151,13 +151,10 @@
 #pragma mark - Share
 
 - (void)shareAction {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK" ofType:@"png"];
-    
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:[NSString stringWithFormat:@"%@\t\n链接:%@",_desc, _url]
                                        defaultContent:@"e购--淘最适合你的单品"
-                                                //image:[ShareSDK imageWithUrl:_imageURL]
-                                                image:[ShareSDK imageWithPath:imagePath]
+                                                image:[ShareSDK imageWithUrl:_imageURL]
                                                 title:@"e购--淘最适合你的单品"
                                                   url:_url
                                           description:@"e购--淘最适合你的单品"
@@ -203,7 +200,6 @@
 }
 
 - (void)sharedFailure:(id<ICMErrorInfo>)error {
-//    NSLog(@"分享失败,错误码:%@错误描述:%@", @([error errorCode]), [error errorDescription]);
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     

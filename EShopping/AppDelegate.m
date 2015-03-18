@@ -9,11 +9,14 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "WaterfallViewController.h"
+#import "Macro.h"
 #import <ShareSDK/ShareSDK.h>
 #import "WeiboSDK.h"
 #import "MobClick.h"
 #import "WXApi.h"
-#import "Macro.h"
+#import <TencentOpenAPI/QQApi.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 
 @interface AppDelegate ()
@@ -40,6 +43,25 @@
     [ShareSDK connectWeChatWithAppId:WX_KEY
                            appSecret:WX_SECRET
                            wechatCls:[WXApi class]];
+    
+    /**
+     连接QQ空间应用以使用相关功能，此应用需要引用QZoneConnection.framework
+     http://connect.qq.com/intro/login/上申请加入QQ登录，并将相关信息填写到以下字段
+     
+     如果需要实现SSO，需要导入TencentOpenAPI.framework,并引入QQApiInterface.h和TencentOAuth.h，将QQApiInterface和TencentOAuth的类型传入接口
+     **/
+    [ShareSDK connectQZoneWithAppKey:QQ_ID
+                           appSecret:QQ_KEY
+                   qqApiInterfaceCls:[QQApiInterface class]
+                     tencentOAuthCls:[TencentOAuth class]];
+    
+    /**
+     连接QQ应用以使用相关功能，此应用需要引用QQConnection.framework和QQApi.framework库
+     http://mobile.qq.com/api/上注册应用，并将相关信息填写到以下字段
+     **/
+    [ShareSDK connectQQWithQZoneAppKey:QQ_ID
+                     qqApiInterfaceCls:[QQApiInterface class]
+                       tencentOAuthCls:[TencentOAuth class]];
     
     //连接拷贝
     [ShareSDK connectCopy];

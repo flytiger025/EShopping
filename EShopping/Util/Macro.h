@@ -43,6 +43,10 @@
 #define WX_KEY @"wxefea52b67b2ec418"
 #define WX_SECRET @"bffac63c57026b175aebc41b2d1c3fb2"
 
+//腾讯SDK
+#define QQ_ID @"1104360133"
+#define QQ_KEY @"QpBqvwz4UrjWZ4XT"
+
 
 //shareSDK
 #define SHARESDK_KEY @"6213cccb4378"
